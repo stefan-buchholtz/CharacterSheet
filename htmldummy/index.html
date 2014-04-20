@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Shadowrun Charakterbogen</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+		<div class="sixteen columns remove-bottom">
+			<h1 style="margin-top: 40px; text-align: right">Shadowrun</h1>
+		</div>
+		<div class="sixteen columns"><h2 style="margin-top: 0px;">Charakterdaten</h2></div>
+		<div class="sixteen columns">
+			<div class="left-column-content right-column-content">
+				<span><strong>Name / Alias: </strong></span><span id="name">Antonio Falcone (Toni)</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="left-column-content">
+				<span><strong>Metatyp: </strong></span><span id="metatype">Ork</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Alter: </strong></span><span id="age">24</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Geschlecht: </strong></span><span id="gender">m</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Nuyen: </strong></span><span id="money">20500</span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="right-column-content">
+				<span><strong>Lebensstil: </strong></span><span id="lifestyle">Unterschicht</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="left-column-content">
+				<span><strong>Karma ges.: </strong></span><span id="totalKarma">24</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Karma Aktuell: </strong></span><span id="remainingKarma">6</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Strassenruf: </strong></span><span id="reputation">2</span>
+			</div>
+		</div>
+		<div class="three columns">
+			<div class="inner-column-content">
+				<span><strong>Schlechter Ruf: </strong></span><span id="notoriety">0</span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="right-column-content">
+				<span><strong>Prominenz: </strong></span><span id="publicity"></span>
+			</div>
+		</div>
+		<div class="sixteen columns"><h2>Attribute</h2></div>
+		<div class="four columns">
+			<div class="left-column-content"><h3>Körperliche Attribute</h3></div>
+			<div class="attribute-box left-column-content"><strong>Konstitution:</strong><span class="attribute-value" id="constitution">6</span></div>
+			<div class="attribute-box left-column-content"><strong>Geschicklichkeit:</strong><span class="attribute-value" id="dexterity">5</span></div>
+			<div class="attribute-box left-column-content"><strong>Reaktion:</strong><span class="attribute-value" id="reaction">5</span></div>
+			<div class="attribute-box left-column-content"><strong>Stärke:</strong><span class="attribute-value" id="strength">5</span></div>
+		</div>
+		<div class="four columns">
+			<div class="inner-column-content"><h3>Geistige Attribute</h3></div>
+			<div class="attribute-box inner-column-content"><strong>Charisma:</strong><span class="attribute-value" id="charisma">2</span></div>
+			<div class="attribute-box inner-column-content"><strong>Intuition:</strong><span class="attribute-value" id="intuition">3</span></div>
+			<div class="attribute-box inner-column-content"><strong>Logik:</strong><span class="attribute-value" id="logic">2</span></div>
+			<div class="attribute-box inner-column-content"><strong>Willenskraft:</strong><span class="attribute-value" id="willpower">3</span></div>
+		</div>
+		<div class="four columns">
+			<div class="inner-column-content"><h3>Besondere Attribute</h3></div>
+			<div class="attribute-box inner-column-content"><strong>Edge:</strong><span class="attribute-value" id="edge">2</span></div>
+			<div class="attribute-box inner-column-content"><strong>Essenz:</strong><span class="attribute-value" id="essence">6</span></div>
+			<div class="attribute-box inner-column-content"><strong>Initiative:</strong><span class="attribute-value" id="initiative">8 (10)</span></div>
+			<div class="attribute-box inner-column-content"><strong>Magie/Resonanz:</strong><span class="attribute-value" id="magic">5</span></div>
+		</div>
+		<div class="four columns">
+			<div class="hide-vertical right-column-content"><h3>Besondere Attribute</h3></div>
+			<div class="attribute-box right-column-content"><strong>Aktuelles Edge:</strong><span class="attribute-value" id="currentEdge">2</span></div>
+			<div class="attribute-box right-column-content"><strong>Astrale INI:</strong><span class="attribute-value" id="astralInitiative"></span></div>
+			<div class="attribute-box right-column-content"><strong>Matrix INI:</strong><span class="attribute-value" id="matrixInitiative"></span></div>
+			<div class="attribute-box right-column-content"><strong>INI-Durchgänge:</strong><span class="attribute-value" id="initiativeTurns">1 (3)</span></div>
+		</div>
+		<div class="sixteen columns"><h2>Fertigkeiten</h2></div>
+		<div class="one-third column">
+			<div><h3>Aktionsfertigkeit</h3></div>
+			<div class="left-column-content" >
+				<table class="skills striped">
+					<thead>
+						<tr>
+							<th>Fertigkeitsbezeichnung</th>
+							<th>Wert</th>
+							<th>Attribut</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="name">Ausweichen</td>
+							<td class="rating value">3</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Klingenwaffen</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Pistolen</td>
+							<td class="rating value">5 (7)</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Bodenfahrzeuge</td>
+							<td class="rating value">5 (7)</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Navigation</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">3<td>
+						</tr>
+						<tr>
+							<td class="name">Fingerfertigkeit</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Einschüchtern</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">2<td>
+						</tr>
+						<tr>
+							<td class="name">Fahrzeugmechanik (Radfahrzeuge)</td>
+							<td class="rating value">2 (4)</td>
+							<td class="attribute value">2<td>
+						</tr>
+						<tr>
+							<td class="name">Infiltration</td>
+							<td class="rating value">3</td>
+							<td class="attribute value">5<td>
+						</tr>
+						<tr>
+							<td class="name">Laufen</td>
+							<td class="rating value">1</td>
+							<td class="attribute value">6<td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="one-third column">
+			<div class="hide-vertical"><h3>Aktionsfertigkeit</h3></div>
+			<div class="inner-column-content">
+				<table class="skills striped">
+					<thead>
+						<tr class="hide-vertical">
+							<th>Fertigkeitsbezeichnung</th>
+							<th>Wert</th>
+							<th>Attribut</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="name">Wahrnehmung</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">3<td>
+						</tr>
+						<tr>
+							<td class="name">Beschatten</td>
+							<td class="rating value">2</td>
+							<td class="attribute value">5<td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="one-third column">
+			<div><h3>Wissensfertigkeit</h3></div>
+			<div class="right-column-content">
+				<table class="skills striped">
+					<thead>
+						<tr>
+							<th>Fertigkeitsbezeichnung</th>
+							<th>Wert</th>
+							<th>Attribut</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="name">Gebräuche (Ork-Gang)</td>
+							<td class="rating value">3 (5)</td>
+							<td class="attribute value">2<td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="sixteen columns"></div>
+		<div class="five columns">
+			<h2>Gaben und Handicaps</h2>
+			<ul class="padded-content unstyled-list" id="advantages">
+				<li>Adept</li>
+				<li>Beidhändigkeit</li>
+				<li>Immunabstossung</li>
+			<ul>
+		</div>
+		<div class="five columns">
+			<h2>Aussehen</h2>
+			<div class="padded-content">
+				<div class="appearance-field"><strong>Größe: </strong><span id="height">1,74m</span></div>
+				<div class="appearance-field"><strong>Gewicht: </strong><span id="weight">80kg</span></div>
+			</div>
+			<div class="padded-content">
+				<div class="appearance-field"><strong>Haarfarbe: </strong><span id="hairColor">schwarz</span></div>
+				<div class="appearance-field"><strong>Augenfarbe: </strong><span id="eyeColor">braun</span></div>
+			</div>
+			<div class="padded-content">
+				<strong>Besondere Merkmale: </strong><span id="specialFeatures"></span>
+			</div>
+		</div>
+		<div class="six columns">
+			<h2>Zustandsmonitor</h2>
+			<div class="padded-content">
+				<div class="conditionMonitor">
+					<h3>Körperliche Schadensleiste</h3>
+					<table id="physicalDamage">
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-1</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-2</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-3</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-4</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-5</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-6</td>
+						</tr>
+					</table>
+					<div class="conditionMonitorSubscript">8 + (Konstitution / 2)</div>
+				</div>
+				<div class="conditionMonitor">
+					<h3>Geistige Schadensleiste</h3>
+					<table id="stunDamage">
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-1</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-2</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-3</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>-4</td>
+						</tr>
+					</table>
+					<div class="conditionMonitorSubscript">8 + (Willenskraft / 2)</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="eight columns">
+			<h2>Fernkampfwaffen</h2>
+			<div class="padded-content">
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Waffe</th>
+							<th>Schaden</th>
+							<th>PB</th>
+							<th>Modus</th>
+							<th>RK</th>
+							<th>Muni</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Renraku Merlin</td>
+							<td class="value">5K</td>
+							<td class="value">-1</td>
+							<td class="value">HM</td>
+							<td class="value">-</td>
+							<td>normal</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="eight columns">
+			<h2>Nahkampfwaffen</h2>
+			<div class="padded-content">
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Waffe</th>
+							<th>Reichweite</th>
+							<th>Schaden</th>
+							<th>PB</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Messer</td>
+							<td class="value"></td>
+							<td class="value"></td>
+							<td class="value"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h2>Panzerung</h2>
+			<div class="padded-content">
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Panzerung</th>
+							<th>Ball./Stoß</th>
+							<th>Anm.</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Panzerjacke</td>
+							<td class="value">8/6</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Mystischer Panzer</td>
+							<td class="value">1/1</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="one-third column">
+			<h2>Kommlink</h2>
+			<div class="padded-content">
+				<strong>Kommlink: </strong>
+				<span id="comlink">Renraku Sensei</span>
+			</div>
+			<div class="padded-content">
+				<strong>Betriebssystem: </strong>
+				<span id="comlink">Renraku Ichi</span>
+			</div>
+			<div class="padded-content">
+				<div class="comlink-field">
+					<strong>Prozessor: </strong>
+					<span id="processor">2</span>
+				</div>
+				<div class="comlink-field">
+					<strong>System: </strong>
+					<span id="system">2</span>
+				</div>
+			</div>
+			<div class="padded-content">
+				<div class="comlink-field">
+					<strong>Firewall: </strong>
+					<span id="firewall">2</span>
+				</div>
+				<div class="comlink-field">
+					<strong>Signal: </strong>
+					<span id="signal">4</span>
+				</div>
+			</div>
+			<div class="padded-content">
+				<strong>Programme: </strong>
+				<span id="programs"></span>
+			</div>
+		</div>
+		<div class="two-thirds column">
+			<h2>Cyberware / Bioware</h2>
+			<div class="padded-content">
+				<table class="striped" id="cyberware">
+					<thead>
+						<tr>
+							<th>Implantat</th>
+							<th>Stufe</th>
+							<th>Essenz</th>
+							<th>Anmerkungen</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="sixteen columns" ></div>
+		<div class="eight columns">
+			<h2>Connections</h2>
+			<div class="padded-content">
+				<table class="striped" id="connections">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Loyalität</th>
+							<th>Stufe</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Schieber</td>
+							<td class="loyalty value">1</td>
+							<td class="rating value">3</td>
+						</tr>
+						<tr>
+							<td>Strassendoc</td>
+							<td class="loyalty value">1</td>
+							<td class="rating value">3</td>
+						</tr>
+						<tr>
+							<td>Sabrina Takashari, DeMeKo-Reporterin</td>
+							<td class="loyalty value">2</td>
+							<td class="rating value">3</td>
+						</tr>
+						<tr>
+							<td>Buffalo, Boß des Capitol-MC</td>
+							<td class="loyalty value">3</td>
+							<td class="rating value">4</td>
+						</tr>
+						<tr>
+							<td>Schwarzmarkthändler (Stuffer Shack)</td>
+							<td class="loyalty value">1</td>
+							<td class="rating value">2</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="eight columns">
+			<h2>SINs</h2>
+			<div class="padded-content">
+				<table class="striped" id="sins">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Stufe</th>
+							<th>Anmerkungen</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+			<h2>Lizenzen</h2>
+			<div class="padded-content">
+				<table class="striped" id="licenses">
+					<thead>
+						<tr>
+							<th>Lizenz</th>
+							<th>Stufe</th>
+							<th>SIN</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="sixteen columns">
+			<h2>Fahrzeuge</h2>
+			<div class="padded-content">
+				<table class="striped responsive" id="vehicles">
+					<thead>
+						<tr>
+							<th>Fahrzeug</th>
+							<th>Handling</th>
+							<th>Beschleunigung</th>
+							<th>Geschwindigkeit</th>
+							<th>Pilot</th>
+							<th>Rumpf</th>
+							<th>Panzerung</th>
+							<th>Sensor</th>
+							<th>Anmerkungen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Hyundai Shin-Yun mit allen Extras bla bla bla</td>
+							<td class="value">2</td>
+							<td class="value">20/45</td>
+							<td class="value">160</td>
+							<td class="value">1</td>
+							<td class="value">10</td>
+							<td class="value">5</td>
+							<td class="value">1</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Ente</td>
+							<td class="value">1</td>
+							<td class="value">5/20</td>
+							<td class="value">100</td>
+							<td class="value"></td>
+							<td class="value">5</td>
+							<td class="value">1</td>
+							<td class="value"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="sixteen columns">
+			<h2>Lebensstil</h2>
+			<div class="padded-content">
+				<table class="striped responsive" id="lifestyle-details">
+					<thead>
+						<tr>
+							<th>Lebensstil</th>
+							<th>Gebiet</th>
+							<th>Komfort</th>
+							<th>Unterhaltung</th>
+							<th>Mobiliar</th>
+							<th>Sicherheit</th>
+							<th>Platz</th>
+							<th>Anmerkungen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Unterschicht</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td/>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="two-thirds column">
+			<h2>Ausrüstung</h2>
+			<ul class="padded-content unstyled-list">
+				<li>Skinlink, SIM-Modul, Elektroden</li>
+				<li>Brille mit Bildverbindung, Blitzkompensation, Infrarot, Smartlink, Sichtverbesserung 3</li>
+				<li>Akku-Schlagbohrer</li>
+				<li>Munition: 60 normal, 12 Ex, 100 Ex-Ex</li>
+			</ul>
+		</div>
+		<div class="one-third column">
+			<h2>Notizen</h2>
+			<ul class="padded-content unstyled-list">
+			</ul>
+		</div>
+		<div class="sixteen columns">
+			<h2>Tradition</h2>
+		</div>
+		<div class="eight columns">
+			<h2>Foki</h2>
+		</div>
+		<div class="eight columns">
+			<h2>Magische Ausrüstung</h2>
+			<ul class="padded-content unstyled-list">
+			</ul>
+		</div>
+		<div class="two-thirds column">
+			<h2>Zaubersprüche</h2>
+			<div class="padded-content">
+			</div>
+		</div>
+		<div class="one-third column">
+			<h2>Initiation / Wandlung</h2>
+			<h2>Schutzpatron</h2>
+		</div>
+		<div class="two-thirds column">
+			<h2>Geister / Sprites</h2>
+			<div class="padded-content">
+			</div>
+		</div>
+		<div class="one-third column">
+			<h2>Adeptenkräfte</h2>
+			<div class="padded-content">
+				<table class="striped" id="adeptPowers">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Stufe</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Gesteigerte Reflexe</td>
+							<td class="value">2</td>
+						</tr>
+						<tr>
+							<td>Verbesserte Fertigkeit (Pistolen)</td>
+							<td class="value">2</td>
+						</tr>
+						<tr>
+							<td>Verbesserte Fertigkeit (Bodenfahrzeuge)</td>
+							<td class="value">2</td>
+						</tr>
+						<tr>
+							<td>Mystischer Panzer</td>
+							<td class="value">1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
+	<script src="js/application.js"></script>
+<!-- End Document
+================================================== -->
+</body>
+</html>
