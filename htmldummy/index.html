@@ -44,60 +44,60 @@
 		<div class="sixteen columns remove-bottom">
 			<h1 style="margin-top: 40px; text-align: right">Shadowrun</h1>
 		</div>
-		<div class="sixteen columns"><h2 style="margin-top: 0px;">Charakterdaten</h2></div>
 		<div class="sixteen columns">
+			<h2 style="margin-top: 0px;">Charakterdaten</h2>
 			<div class="left-column-content right-column-content">
-				<span><strong>Name / Alias: </strong></span><span id="name">Antonio Falcone (Toni)</span>
+				<strong>Name / Alias: </strong><span id="name">Antonio Falcone (Toni)</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="left-column-content">
-				<span><strong>Metatyp: </strong></span><span id="metatype">Ork</span>
+				<strong>Metatyp: </strong><span id="metatype">Ork</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Alter: </strong></span><span id="age">24</span>
+				<strong>Alter: </strong><span id="age">24</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Geschlecht: </strong></span><span id="gender">m</span>
+				<strong>Geschlecht: </strong><span id="gender">m</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Nuyen: </strong></span><span id="money">20500</span>
+				<strong>Nuyen: </strong><span id="money">20500</span>
 			</div>
 		</div>
 		<div class="four columns">
 			<div class="right-column-content">
-				<span><strong>Lebensstil: </strong></span><span id="lifestyle">Unterschicht</span>
+				<strong>Lebensstil: </strong><span id="lifestyle">Unterschicht</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="left-column-content">
-				<span><strong>Karma ges.: </strong></span><span id="totalKarma">24</span>
+				<strong>Karma ges.: </strong><span id="totalKarma">24</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Karma Aktuell: </strong></span><span id="remainingKarma">6</span>
+				<strong>Karma Aktuell: </strong><span id="remainingKarma">6</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Strassenruf: </strong></span><span id="reputation">2</span>
+				<strong>Strassenruf: </strong><span id="reputation">2</span>
 			</div>
 		</div>
 		<div class="three columns">
 			<div class="inner-column-content">
-				<span><strong>Schlechter Ruf: </strong></span><span id="notoriety">0</span>
+				<strong>Schlechter Ruf: </strong><span id="notoriety">0</span>
 			</div>
 		</div>
 		<div class="four columns">
 			<div class="right-column-content">
-				<span><strong>Prominenz: </strong></span><span id="publicity"></span>
+				<strong>Prominenz: </strong><span id="publicity"></span>
 			</div>
 		</div>
 		<div class="sixteen columns"><h2>Attribute</h2></div>
@@ -624,8 +624,58 @@
 		<div class="sixteen columns">
 			<h2>Tradition</h2>
 		</div>
+		<div class="one-third column">
+			<div class="left-column-content">
+				<strong>Tradition: </strong><span id="tradition"></span>
+			</div>
+		</div>
+		<div class="two-thirds column">
+			<div class="right-column-content">
+				<strong>Konzept: </strong><span id="concept"></span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="left-column-content">
+				<strong>Heilung: </strong><span id="healing"></span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="inner-column-content">
+				<strong>Illusion: </strong><span id="illusion"></span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="inner-column-content">
+				<strong>Kampf: </strong><span id="combat"></span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="right-column-content">
+				<strong>Manipulation: </strong><span id="manipulation"></span>
+			</div>
+		</div>
+		<div class="four columns">
+			<div class="left-column-content">
+				<strong>Wahrnehmung: </strong><span id="perception"></span>
+			</div>
+		</div>
+		<div class="eight columns offset-by-four">
+			<div class="right-column-content">
+				<strong>Entzugsattribute: </strong><span id="drainAttributes"></span>
+			</div>
+		</div>
 		<div class="eight columns">
 			<h2>Foki</h2>
+			<table class="striped" id="foci">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Stufe</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
 		<div class="eight columns">
 			<h2>Magische Ausrüstung</h2>
@@ -635,15 +685,60 @@
 		<div class="two-thirds column">
 			<h2>Zaubersprüche</h2>
 			<div class="padded-content">
+				<table class="striped" id="spells">
+					<thead>
+						<tr>
+							<th>Zauberspruch</th>
+							<th>Art</th>
+							<th>Reichweite</th>
+							<th>Dauer</th>
+							<th>Entzug</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="one-third column">
 			<h2>Initiation / Wandlung</h2>
+			<div class="padded-content">
+				<strong>Grad: </strong>
+				<span id="initiation"></span>
+			</div>
+			<div class="padded-content">
+				<strong>Metamagie / Echos: </strong>
+				<span id="metamagic"></span>
+			</div>
 			<h2>Schutzpatron</h2>
+			<div class="padded-content">
+				<strong>Schutzpatron: </strong>
+				<span id="patron"></span>
+			</div>
+			<div class="padded-content">
+				<strong>Vorteile: </strong>
+				<span id="patron-advantages"></span>
+			</div>
+			<div class="padded-content">
+				<strong>Nachteile: </strong>
+				<span id="patron-disadvantages"></span>
+			</div>
 		</div>
 		<div class="two-thirds column">
-			<h2>Geister / Sprites</h2>
+			<h2>Geister</h2>
 			<div class="padded-content">
+				<table class="striped" id="spirits">
+					<thead>
+						<tr>
+							<th>Geist</th>
+							<th>Kräfte</th>
+							<th>Dienste</th>
+							<th>gebunden</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="one-third column">
@@ -676,6 +771,36 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+		<div class="two-thirds column">
+			<h2>Sprites</h2>
+			<div class="padded-content">
+				<table class="striped" id="sprites">
+					<thead>
+						<tr>
+							<th>Sprite</th>
+							<th>Kräfte</th>
+							<th>Dienste</th>
+							<th>registriert</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="one-third column">
+			<h2>Wandlung</h2>
+			<div class="padded-content">
+				<strong>Grad: </strong>
+				<span id="submersion"></span>
+			</div>
+			<div class="padded-content">
+				<strong>Echos: </strong>
+				<span id="echos"></span>
+			</div>
+		</div>
+		<div class="sixteen columns add-bottom">
 		</div>
 	</div><!-- container -->
 
