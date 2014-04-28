@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/js/services.js</string>
+	<string>app/partials/sr4/comlink.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>bower.json</string>
 			<key>lastUsed</key>
-			<date>2014-04-28T07:25:00Z</date>
+			<date>2014-04-28T20:34:35Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>package.json</string>
 			<key>lastUsed</key>
-			<date>2014-04-28T10:00:46Z</date>
+			<date>2014-04-28T18:24:58Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -39,6 +39,8 @@
 			<string>database</string>
 		</dict>
 		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>htmldummy</string>
 			<key>regexFolderFilter</key>
@@ -56,51 +58,107 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>25</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>809</integer>
+				<integer>13</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>762</integer>
+			<integer>0</integer>
 		</dict>
 		<key>app/js/app.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>29</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>3</integer>
+				<integer>63</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>13</integer>
 		</dict>
 		<key>app/js/controllers.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>77</integer>
+				<integer>60</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>109</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>107</integer>
 		</dict>
 		<key>app/js/services.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>28</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>34</integer>
+				<integer>84</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/base.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>139</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/comlink.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>39</integer>
+				<key>line</key>
+				<integer>31</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/conditionMonitor.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>132</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/magic.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>151</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -114,7 +172,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>12</integer>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -134,20 +192,6 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>htmldummy/index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>19</integer>
-				<key>line</key>
-				<integer>775</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>715</integer>
 		</dict>
 		<key>htmldummy/stylesheets/base.css</key>
 		<dict>
@@ -196,14 +240,18 @@
 	<array>
 		<string>bower.json</string>
 		<string>package.json</string>
-		<string>app/js/app.js</string>
-		<string>app/js/controllers.js</string>
 		<string>app/js/services.js</string>
 		<string>app/index.html</string>
+		<string>app/js/controllers.js</string>
+		<string>app/js/app.js</string>
+		<string>app/partials/sr4/comlink.html</string>
+		<string>app/partials/sr4/base.html</string>
+		<string>app/partials/sr4/magic.html</string>
+		<string>app/partials/sr4/conditionMonitor.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{22, 79}, {1205, 979}}</string>
+	<string>{{22, 79}, {1589, 979}}</string>
 </dict>
 </plist>

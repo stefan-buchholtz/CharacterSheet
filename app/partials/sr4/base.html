@@ -87,68 +87,8 @@
 	<div class="six columns">
 		<h2>Zustandsmonitor</h2>
 		<div class="padded-content">
-			<div class="conditionMonitor">
-				<h3>Körperliche Schadensleiste</h3>
-				<table id="physicalDamage">
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-1</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-2</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-3</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-4</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-5</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-6</td>
-					</tr>
-				</table>
-				<div class="conditionMonitorSubscript">8 + (Konstitution / 2)</div>
-			</div>
-			<div class="conditionMonitor">
-				<h3>Geistige Schadensleiste</h3>
-				<table id="stunDamage">
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-1</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-2</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-3</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-						<td>-4</td>
-					</tr>
-				</table>
-				<div class="conditionMonitorSubscript">8 + (Willenskraft / 2)</div>
-			</div>
+			<cs-sr4-condition-monitor attributes="character.attributes" type="'physical'"></cs-sr4-condition-monitor>
+			<cs-sr4-condition-monitor attributes="character.attributes" type="'stun'"></cs-sr4-condition-monitor>
 		</div>
 	</div>
 

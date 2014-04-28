@@ -97,6 +97,48 @@ characterSheetControllers.directive('csSr4SkillTable', function() {
 	};
 });
 
+characterSheetControllers.directive('csSr4ConditionMonitor', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'partials/sr4/conditionMonitor.html',
+		scope: {
+			attributes: '=',
+			type: '='
+		},
+		link: function(scope, element, attrs) {
+			scope.cellClick = function(event) {
+				var damage = Number(event.target.getAttribute('damage'));
+				if ( damage > scope.maxDamage ) {
+					return;
+				}
+				if (damage > scope.currentDamage) {
+					scope.currentDamage = damage;
+				} else {
+					scope.currentDamage = damage - 1;
+				}
+			}
+			var attributeValue = scope.type === 'physical' ? scope.attributes.constitution : scope.attributes.willpower;
+			scope.maxDamage = 8 + Math.floor(attributeValue / 2);
+			scope.currentDamage = 0;
+			scope.rows = [];
+			var penalty = 0;
+			for (var rowBaseDmg = 0; rowBaseDmg < scope.maxDamage; rowBaseDmg += 3) {
+				var row = {
+					base: rowBaseDmg,
+					penalty: --penalty,
+					columns: []
+				}
+				for (var col = 1; col <= 3; col++) {
+					var damage = rowBaseDmg + col;
+					row.columns.push({id: scope.type + '-' + damage, damage: damage, cellClass: damage <= scope.maxDamage ? 'enabled' : 'disabled'});
+				}
+				row.columns[2].content = penalty;
+				scope.rows.push(row);
+			}
+		}
+	}
+});
+
 characterSheetControllers.directive('csSr4RangedWeapons', function() {
 	return {
 		restrict: 'E',
