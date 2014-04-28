@@ -1,0 +1,19 @@
+<h2>Lizenzen</h2>
+<div class="padded-content">
+	<table class="striped" id="licenses">
+		<thead>
+			<tr>
+				<th>Lizenz</th>
+				<th>Stufe</th>
+				<th>SIN</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="license in licenses">
+				<td>{{license.name}}</td>
+				<td>{{license.rating}}</td>
+				<td>{{license.sin}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

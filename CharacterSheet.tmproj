@@ -3,9 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>database/character_sheet.sql</string>
+	<string>app/js/services.js</string>
 	<key>documents</key>
 	<array>
+		<dict>
+			<key>filename</key>
+			<string>bower.json</string>
+			<key>lastUsed</key>
+			<date>2014-04-28T07:25:00Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>package.json</string>
+			<key>lastUsed</key>
+			<date>2014-04-28T10:00:46Z</date>
+		</dict>
+		<dict>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>app</string>
+			<key>regexFolderFilter</key>
+			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>sourceDirectory</key>
+			<string>app</string>
+		</dict>
 		<dict>
 			<key>expanded</key>
 			<true/>
@@ -17,8 +39,6 @@
 			<string>database</string>
 		</dict>
 		<dict>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>htmldummy</string>
 			<key>regexFolderFilter</key>
@@ -31,19 +51,75 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>database/character_sheet.sql</key>
+		<key>app/index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>25</integer>
+				<key>line</key>
+				<integer>809</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>762</integer>
+		</dict>
+		<key>app/js/app.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>29</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/js/controllers.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>77</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/js/services.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>28</integer>
 				<key>line</key>
-				<integer>40</integer>
+				<integer>34</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>6</integer>
+			<integer>0</integer>
+		</dict>
+		<key>bower.json</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>12</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>database/databasechangelog.xml</key>
 		<dict>
@@ -87,20 +163,6 @@
 			<key>firstVisibleLine</key>
 			<integer>81</integer>
 		</dict>
-		<key>htmldummy/stylesheets/layout.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>htmldummy/stylesheets/skeleton.css</key>
 		<dict>
 			<key>caret</key>
@@ -115,19 +177,33 @@
 			<key>firstVisibleLine</key>
 			<integer>53</integer>
 		</dict>
+		<key>package.json</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>33</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>htmldummy/index.html</string>
-		<string>database/databasechangelog.xml</string>
-		<string>database/character_sheet.sql</string>
-		<string>htmldummy/stylesheets/layout.css</string>
-		<string>htmldummy/stylesheets/skeleton.css</string>
-		<string>htmldummy/stylesheets/base.css</string>
+		<string>bower.json</string>
+		<string>package.json</string>
+		<string>app/js/app.js</string>
+		<string>app/js/controllers.js</string>
+		<string>app/js/services.js</string>
+		<string>app/index.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{236, 66}, {1176, 812}}</string>
+	<string>{{22, 79}, {1205, 979}}</string>
 </dict>
 </plist>

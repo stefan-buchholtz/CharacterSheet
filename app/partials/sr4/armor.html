@@ -1,0 +1,19 @@
+<h2>Panzerung</h2>
+<div class="padded-content">
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>Panzerung</th>
+				<th>Ball./Stoß</th>
+				<th>Anm.</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="armor in armor">
+				<td>{{armor.name}}</td>
+				<td class="value">{{armor.protection}}</td>
+				<td>{{armor.notes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

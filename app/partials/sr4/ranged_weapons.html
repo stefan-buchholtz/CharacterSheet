@@ -1,0 +1,25 @@
+<h2>Fernkampfwaffen</h2>
+<div class="padded-content">
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>Waffe</th>
+				<th>Schaden</th>
+				<th>PB</th>
+				<th>Modus</th>
+				<th>RK</th>
+				<th>Muni</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="weapon in weapons">
+				<td>{{weapon.name}}</td>
+				<td class="value">{{weapon.damage}}</td>
+				<td class="value">{{weapon.armorPenetration}}</td>
+				<td class="value">{{weapon.fireMode}}</td>
+				<td class="value">{{weapon.recoilCompensation}}</td>
+				<td>{{weapon.ammo}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

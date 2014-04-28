@@ -1,0 +1,19 @@
+<h2>SINs</h2>
+<div class="padded-content">
+	<table class="striped" id="sins">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Stufe</th>
+				<th>Anmerkungen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="sin in sins">
+				<td>{{sin.name}}</td>
+				<td>{{sin.rating}}</td>
+				<td>{{sin.notes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

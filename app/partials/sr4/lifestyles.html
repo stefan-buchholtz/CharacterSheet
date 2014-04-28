@@ -1,0 +1,29 @@
+<h2>Lebensstil</h2>
+<div class="padded-content">
+	<table class="striped responsive" id="lifestyle-details">
+		<thead>
+			<tr>
+				<th>Lebensstil</th>
+				<th>Gebiet</th>
+				<th>Komfort</th>
+				<th>Unterhaltung</th>
+				<th>Mobiliar</th>
+				<th>Sicherheit</th>
+				<th>Platz</th>
+				<th>Anmerkungen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="lifestyle in lifestyles">
+				<td>{{lifestyle.name}}</td>
+				<td>{{lifestyle.area}}</td>
+				<td>{{lifestyle.comfort}}</td>
+				<td>{{lifestyle.entertainment}}</td>
+				<td>{{lifestyle.furniture}}</td>
+				<td>{{lifestyle.security}}</td>
+				<td>{{lifestyle.space}}</td>
+				<td>{{lifestyle.notes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

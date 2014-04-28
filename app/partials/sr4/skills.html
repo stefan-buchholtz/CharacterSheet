@@ -1,0 +1,19 @@
+<div ng-class="{'hide-vertical': content.repeatHeader}"><h3>{{content.skillType}}</h3></div>
+<div class="{{content.wrapperClass}}" >
+	<table class="skills striped">
+		<thead ng-class="{'hide-vertical': content.repeatHeader}">
+			<tr>
+				<th>Fertigkeitsbezeichnung</th>
+				<th>Wert</th>
+				<th>Attribut</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="skill in content.skills">
+				<td class="name">{{skill.name}}</td>
+				<td class="rating value">{{skill.rating}}</td>
+				<td class="attribute value">{{skill.attributeValue}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

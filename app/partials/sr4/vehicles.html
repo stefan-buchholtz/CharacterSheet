@@ -1,0 +1,31 @@
+<h2>Fahrzeuge</h2>
+<div class="padded-content">
+	<table class="striped responsive" id="vehicles">
+		<thead>
+			<tr>
+				<th>Fahrzeug</th>
+				<th>Handling</th>
+				<th>Beschleunigung</th>
+				<th>Geschwindigkeit</th>
+				<th>Pilot</th>
+				<th>Rumpf</th>
+				<th>Panzerung</th>
+				<th>Sensor</th>
+				<th>Anmerkungen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="vehicle in vehicles">
+				<td>{{vehicle.name}}</td>
+				<td class="value">{{vehicle.handling}}</td>
+				<td class="value">{{vehicle.acceleration}}</td>
+				<td class="value">{{vehicle.speed}}</td>
+				<td class="value">{{vehicle.pilot}}</td>
+				<td class="value">{{vehicle.body}}</td>
+				<td class="value">{{vehicle.armor}}</td>
+				<td class="value">{{vehicle.sensor}}</td>
+				<td>{{vehicle.notes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

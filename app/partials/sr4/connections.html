@@ -1,0 +1,19 @@
+<h2>Connections</h2>
+<div class="padded-content">
+	<table class="striped" id="connections">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Loyalität</th>
+				<th>Stufe</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="connection in connections">
+				<td>{{connection.name}}</td>
+				<td class="loyalty value">{{connection.loyalty}}</td>
+				<td class="rating value">{{connection.rating}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

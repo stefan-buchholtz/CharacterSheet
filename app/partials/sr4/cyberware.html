@@ -1,0 +1,21 @@
+<h2>Cyberware / Bioware</h2>
+<div class="padded-content">
+	<table class="striped" id="cyberware">
+		<thead>
+			<tr>
+				<th>Implantat</th>
+				<th>Stufe</th>
+				<th>Essenz</th>
+				<th>Anmerkungen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="implant in cyberware">
+				<td>{{implant.name}}</td>
+				<td>{{implant.rating}}</td>
+				<td>{{implant.essenceCost}}</td>
+				<td>{{implant.notes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

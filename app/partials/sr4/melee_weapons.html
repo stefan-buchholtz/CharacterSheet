@@ -1,0 +1,21 @@
+<h2>Nahkampfwaffen</h2>
+<div class="padded-content">
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>Waffe</th>
+				<th>Reichweite</th>
+				<th>Schaden</th>
+				<th>PB</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="weapon in weapons">
+				<td>{{weapon.name}}</td>
+				<td class="value">{{weapon.range}}</td>
+				<td class="value">{{weapon.damage}}</td>
+				<td class="value">{{weapon.armorPenetration}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

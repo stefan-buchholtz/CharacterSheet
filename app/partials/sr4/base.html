@@ -1,0 +1,200 @@
+<div class="container" ng-controller="Sr4CharacterSheetCtrl">
+	<div class="sixteen columns remove-bottom">
+		<h1 style="margin-top: 40px; text-align: right">Shadowrun</h1>
+	</div>
+	<div class="sixteen columns">
+		<h2 style="margin-top: 0px;">Charakterdaten</h2>
+		<div class="left-column-content right-column-content">
+			<strong>Name / Alias: </strong><span id="name">{{character.name}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="left-column-content">
+			<strong>Metatyp: </strong><span id="metatype">{{character.metatype}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Alter: </strong><span id="age">{{character.age}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Geschlecht: </strong><span id="gender">{{character.gender}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Nuyen: </strong><span id="money">{{character.money}}</span>
+		</div>
+	</div>
+	<div class="four columns">
+		<div class="right-column-content">
+			<strong>Lebensstil: </strong><span id="lifestyle">{{character.lifestyle}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="left-column-content">
+			<strong>Karma ges.: </strong><span id="totalKarma">{{character.totalKarma}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Karma Aktuell: </strong><span id="remainingKarma">{{character.remainingKarma}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Strassenruf: </strong><span id="reputation">{{character.reputation}}</span>
+		</div>
+	</div>
+	<div class="three columns">
+		<div class="inner-column-content">
+			<strong>Schlechter Ruf: </strong><span id="notoriety">{{character.notoriety}}</span>
+		</div>
+	</div>
+	<div class="four columns">
+		<div class="right-column-content">
+			<strong>Prominenz: </strong><span id="publicity">{{character.publicity}}</span>
+		</div>
+	</div>
+	<cs-sr4-attributes attributes="character.attributes"></cs-sr4-attributes>
+	<div class="sixteen columns"><h2>Fertigkeiten</h2></div>
+	<cs-sr4-skill-table class="one-third column" content="leftSkillColumn"></cs-sr4-skill-table>
+	<cs-sr4-skill-table class="one-third column" content="middleSkillColumn"></cs-sr4-skill-table>
+	<cs-sr4-skill-table class="one-third column" content="rightSkillColumn"></cs-sr4-skill-table>
+	<div class="sixteen columns"></div>
+	<div class="five columns">
+		<h2>Gaben und Handicaps</h2>
+		<ul class="padded-content unstyled-list" id="advantages">
+			<li ng-repeat="advantage in character.advantages">{{advantage}}</li>
+		</ul>
+	</div>
+	<div class="five columns">
+		<h2>Aussehen</h2>
+		<div class="padded-content">
+			<div class="appearance-field"><strong>Größe: </strong><span id="height">{{character.height}}</span></div>
+			<div class="appearance-field"><strong>Gewicht: </strong><span id="weight">{{character.weight}}</span></div>
+		</div>
+		<div class="padded-content">
+			<div class="appearance-field"><strong>Haarfarbe: </strong><span id="hairColor">{{character.hairColor}}</span></div>
+			<div class="appearance-field"><strong>Augenfarbe: </strong><span id="eyeColor">{{character.eyeColor}}</span></div>
+		</div>
+		<div class="padded-content">
+			<strong>Besondere Merkmale: </strong><span id="specialFeatures">{{character.specialFeatures}}</span>
+		</div>
+	</div>
+	<div class="six columns">
+		<h2>Zustandsmonitor</h2>
+		<div class="padded-content">
+			<div class="conditionMonitor">
+				<h3>Körperliche Schadensleiste</h3>
+				<table id="physicalDamage">
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-1</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-2</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-3</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-4</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-5</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-6</td>
+					</tr>
+				</table>
+				<div class="conditionMonitorSubscript">8 + (Konstitution / 2)</div>
+			</div>
+			<div class="conditionMonitor">
+				<h3>Geistige Schadensleiste</h3>
+				<table id="stunDamage">
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-1</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-2</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-3</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>-4</td>
+					</tr>
+				</table>
+				<div class="conditionMonitorSubscript">8 + (Willenskraft / 2)</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="eight columns">
+		<cs-sr4-ranged-weapons ng-if="rangedWeaponCount" weapons="character.rangedWeapons"></cs-sr4-ranged-weapons>
+		<cs-sr4-melee-weapons ng-if="meleeWeaponDisplay === 'left'" weapons="character.meleeWeapons"></cs-sr4-melee-weapons>		
+	</div>
+	<div class="eight columns">
+		<cs-sr4-melee-weapons ng-if="meleeWeaponDisplay === 'right'" weapons="character.meleeWeapons"></cs-sr4-melee-weapons>		
+		<cs-sr4-armor ng-if="armorCount" armor="character.armor"></cs-sr4-armor>		
+	</div>
+	<div class="sixteen columns"></div>
+	<div class="one-third column">
+		<cs-sr4-comlink ng-if="character.comlink" comlink="character.comlink"></cs-sr4-comlink>
+	</div>
+	<div class="two-thirds column">
+		<cs-sr4-cyberware ng-if="character.cyberware.length" cyberware="character.cyberware"></cs-sr4-cyberware>
+	</div>
+	<div class="sixteen columns" ></div>
+	<div class="eight columns">
+		<cs-sr4-connections ng-if="character.connections.length" connections="character.connections"></cs-sr4-connections>
+	</div>
+	<div class="eight columns">
+		<cs-sr4-sins ng-if="character.sins.length" sins="character.sins"></cs-sr4-sins>
+		<cs-sr4-licenses ng-if="character.licenses.length" sins="character.licenses"></cs-sr4-licenses>
+	</div>
+	<div class="sixteen columns">
+		<cs-sr4-vehicles ng-if="character.vehicles.length" vehicles="character.vehicles"></cs-sr4-vehicles>
+	</div>
+	<div class="sixteen columns">
+		<cs-sr4-lifestyles ng-if="character.lifestyles.length" lifestyles="character.lifestyles"></cs-sr4-lifestyles>
+	</div>
+	<div class="two-thirds column">
+		<h2>Ausrüstung</h2>
+		<ul class="padded-content unstyled-list">
+			<li ng-repeat="item in character.equipment">{{item}}</li>
+		</ul>
+	</div>
+	<div class="one-third column">
+		<h2>Notizen</h2>
+		<ul class="padded-content unstyled-list">
+			<li ng-repeat="note in character.notes">{{note}}</li>
+		</ul>
+	</div>
+	<cs-sr4-magic ng-if="character.magic" magic="character.magic"></cs-sr4-magic>
+	<cs-sr4-technomancy ng-if="character.technomancy" technomancy="character.technomancy"></cs-sr4-technomancy>
+	<div class="sixteen columns add-bottom">
+	</div>
+</div><!-- container -->
