@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/partials/sr4/comlink.html</string>
+	<string>app/stylesheets/layout.css</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>bower.json</string>
 			<key>lastUsed</key>
-			<date>2014-04-28T20:34:35Z</date>
+			<date>2014-04-28T21:43:52Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>package.json</string>
 			<key>lastUsed</key>
-			<date>2014-04-28T18:24:58Z</date>
+			<date>2014-04-28T20:50:31Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -86,14 +86,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>60</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>109</integer>
+				<integer>224</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>107</integer>
+			<integer>198</integer>
 		</dict>
 		<key>app/js/services.js</key>
 		<dict>
@@ -114,14 +114,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>97</integer>
 				<key>line</key>
-				<integer>139</integer>
+				<integer>118</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>87</integer>
 		</dict>
 		<key>app/partials/sr4/comlink.html</key>
 		<dict>
@@ -151,6 +151,34 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/partials/sr4/connections.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>16</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/cyberware.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/partials/sr4/magic.html</key>
 		<dict>
 			<key>caret</key>
@@ -165,14 +193,56 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>bower.json</key>
+		<key>app/partials/sr4/technomancy.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>28</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/vehicles.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>31</integer>
+				<key>line</key>
+				<integer>34</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/stylesheets/layout.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>bower.json</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>30</integer>
+				<key>line</key>
+				<integer>9</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -187,6 +257,20 @@
 				<integer>31</integer>
 				<key>line</key>
 				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>htmldummy/js/application.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>19</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -226,9 +310,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>33</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -244,10 +328,16 @@
 		<string>app/index.html</string>
 		<string>app/js/controllers.js</string>
 		<string>app/js/app.js</string>
+		<string>app/partials/sr4/cyberware.html</string>
+		<string>app/partials/sr4/connections.html</string>
+		<string>app/partials/sr4/conditionMonitor.html</string>
+		<string>app/partials/sr4/vehicles.html</string>
+		<string>app/stylesheets/layout.css</string>
+		<string>htmldummy/js/application.js</string>
+		<string>app/partials/sr4/technomancy.html</string>
 		<string>app/partials/sr4/comlink.html</string>
 		<string>app/partials/sr4/base.html</string>
 		<string>app/partials/sr4/magic.html</string>
-		<string>app/partials/sr4/conditionMonitor.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

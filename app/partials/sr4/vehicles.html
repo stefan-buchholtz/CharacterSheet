@@ -1,6 +1,6 @@
 <h2>Fahrzeuge</h2>
 <div class="padded-content">
-	<table class="striped responsive" id="vehicles">
+	<table class="striped responsive desktop" id="vehicles">
 		<thead>
 			<tr>
 				<th>Fahrzeug</th>
@@ -28,4 +28,44 @@
 			</tr>
 		</tbody>
 	</table>
+	<div class="responsive mobile">
+		<div ng-repeat="vehicle in vehicles" class="key-value-record">
+			<div class="key-value-row">
+				<div class="key-value-key">Fahrzeug</div>
+				<div class="key-value-value">{{vehicle.name}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Handling</div>
+				<div class="key-value-value">{{vehicle.handling}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Beschleunigung</div>
+				<div class="key-value-value">{{vehicle.acceleration}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Geschwindigkeit</div>
+				<div class="key-value-value">{{vehicle.speed}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Pilot</div>
+				<div class="key-value-value">{{vehicle.pilot}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Rumpf</div>
+				<div class="key-value-value">{{vehicle.body}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Panzerung</div>
+				<div class="key-value-value">{{vehicle.armor}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Sensor</div>
+				<div class="key-value-value">{{vehicle.sensor}}</div>
+			</div>
+			<div class="key-value-row">
+				<div class="key-value-key">Anmerkungen</div>
+				<div class="key-value-value">{{vehicle.notes}}</div>
+			</div>
+		</div>
+	</div>
 </div>
