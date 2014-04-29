@@ -30,42 +30,15 @@
 	</table>
 	<div class="responsive mobile">
 		<div ng-repeat="vehicle in vehicles" class="key-value-record">
-			<div class="key-value-row">
-				<div class="key-value-key">Fahrzeug</div>
-				<div class="key-value-value">{{vehicle.name}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Handling</div>
-				<div class="key-value-value">{{vehicle.handling}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Beschleunigung</div>
-				<div class="key-value-value">{{vehicle.acceleration}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Geschwindigkeit</div>
-				<div class="key-value-value">{{vehicle.speed}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Pilot</div>
-				<div class="key-value-value">{{vehicle.pilot}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Rumpf</div>
-				<div class="key-value-value">{{vehicle.body}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Panzerung</div>
-				<div class="key-value-value">{{vehicle.armor}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Sensor</div>
-				<div class="key-value-value">{{vehicle.sensor}}</div>
-			</div>
-			<div class="key-value-row">
-				<div class="key-value-key">Anmerkungen</div>
-				<div class="key-value-value">{{vehicle.notes}}</div>
-			</div>
+			<cs-key-value-row key="'Fahrzeug'" value="vehicle.name"></cs-key-value-row>
+			<cs-key-value-row key="'Handling'" value="vehicle.handling"></cs-key-value-row>
+			<cs-key-value-row key="'Beschleunigung'" value="vehicle.acceleration"></cs-key-value-row>
+			<cs-key-value-row key="'Geschwindigkeit'" value="vehicle.speed"></cs-key-value-row>
+			<cs-key-value-row key="'Pilot'" value="vehicle.pilot"></cs-key-value-row>
+			<cs-key-value-row key="'Rumpf'" value="vehicle.body"></cs-key-value-row>
+			<cs-key-value-row key="'Panzerung'" value="vehicle.armor"></cs-key-value-row>
+			<cs-key-value-row key="'Sensor'" value="vehicle.sensor"></cs-key-value-row>
+			<cs-key-value-row key="'Anmerkungen'" value="vehicle.notes"></cs-key-value-row>
 		</div>
 	</div>
 </div>

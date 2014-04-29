@@ -1,28 +1,6 @@
 <div class="two-thirds column">
-	<h2>Sprites</h2>
-	<div class="padded-content">
-		<table class="striped" id="sprites">
-			<thead>
-				<tr>
-					<th>Sprite</th>
-					<th>Kräfte</th>
-					<th>Dienste</th>
-					<th>registriert</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-	</div>
+	<cs-sr4-spirits ng-if="technomancy.sprites.length" spirits="technomancy.sprites" magic="false"></cs-sr4-spirits>
 </div>
 <div class="one-third column">
-	<h2>Wandlung</h2>
-	<div class="padded-content">
-		<strong>Grad: </strong>
-		<span id="submersion"></span>
-	</div>
-	<div class="padded-content">
-		<strong>Echos: </strong>
-		<span id="echos"></span>
-	</div>
+	<cs-sr4-initiation ng-if="technomancy.submersion" initiation="technomancy.submersion" magic="false"></cs-sr4-initiation>
 </div>

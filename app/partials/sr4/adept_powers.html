@@ -1,0 +1,17 @@
+<h2>Adeptenkräfte</h2>
+<div class="padded-content">
+	<table class="striped" id="adeptPowers">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Stufe</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="power in adeptPowers">
+				<td>{{power.name}}</td>
+				<td class="value">{{power.rating}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

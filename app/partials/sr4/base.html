@@ -122,10 +122,7 @@
 		<cs-sr4-lifestyles ng-if="character.lifestyles.length" lifestyles="character.lifestyles"></cs-sr4-lifestyles>
 	</div>
 	<div class="two-thirds column">
-		<h2>Ausrüstung</h2>
-		<ul class="padded-content unstyled-list">
-			<li ng-repeat="item in character.equipment">{{item}}</li>
-		</ul>
+		<cs-sr4-equipment equipment="character.equipment" magic="false"></cs-sr4-equipment>
 	</div>
 	<div class="one-third column">
 		<h2>Notizen</h2>

@@ -1,0 +1,21 @@
+<h2>{{magic ? 'Geister' : 'Sprites'}}</h2>
+<div class="padded-content">
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>{{magic ? 'Geist' : 'Sprite'}}</th>
+				<th>Kraft</th>
+				<th>Dienste</th>
+				<th>gebunden</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="spirit in spirits">
+				<td>{{spirit.name}}</td>
+				<td class="value">{{spirit.level}}</td>
+				<td class="value">{{spirit.services}}</td>
+				<td class="value">{{spirit.bound ? 'Ja' : 'Nein'}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

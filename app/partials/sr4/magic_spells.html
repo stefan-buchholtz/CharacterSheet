@@ -1,0 +1,23 @@
+<h2>Zaubersprüche</h2>
+<div class="padded-content">
+	<table class="striped" id="spells">
+		<thead>
+			<tr>
+				<th>Zauberspruch</th>
+				<th>Art</th>
+				<th>Reichweite</th>
+				<th>Dauer</th>
+				<th>Entzug</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="spell in spells">
+				<td>{{spell.name}}</td>
+				<td class="value">{{spell.type}}</td>
+				<td class="value">{{spell.range}}</td>
+				<td class="value">{{spell.duration}}</td>
+				<td class="value">{{spell.drain}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

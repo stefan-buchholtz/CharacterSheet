@@ -1,6 +1,6 @@
 <h2>Lebensstil</h2>
 <div class="padded-content">
-	<table class="striped responsive" id="lifestyle-details">
+	<table class="striped responsive desktop" id="lifestyle-details">
 		<thead>
 			<tr>
 				<th>Lebensstil</th>
@@ -26,4 +26,16 @@
 			</tr>
 		</tbody>
 	</table>
+	<div class="striped responsive mobile">
+		<div ng-repeat="lifestyle in lifestyles" class="key-value-record">
+			<cs-key-value-row key="'Lebensstil'" value="lifestyle.name"></cs-key-value-row>
+			<cs-key-value-row key="'Gebiet'" value="lifestyle.area"></cs-key-value-row>
+			<cs-key-value-row key="'Komfort'" value="lifestyle.comfort"></cs-key-value-row>
+			<cs-key-value-row key="'Unterhaltung'" value="lifestyle.entertainment"></cs-key-value-row>
+			<cs-key-value-row key="'Mobiliar'" value="lifestyle.furniture"></cs-key-value-row>
+			<cs-key-value-row key="'Sicherheit'" value="lifestyle.security"></cs-key-value-row>
+			<cs-key-value-row key="'Platz'" value="lifestyle.space"></cs-key-value-row>
+			<cs-key-value-row key="'Anmerkungen'" value="lifestyle.notes"></cs-key-value-row>
+		</div>
+	</div>
 </div>

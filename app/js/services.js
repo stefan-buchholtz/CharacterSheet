@@ -228,6 +228,145 @@ characterSheetServices.factory('Character', function() {
 			equipment: ['Skinlink, SIM-Modul, Elektroden', 'Brille mit Bildverbindung, Blitzkompensation, Infrarot, Smartlink, Sichtverbesserung 3', 'Akku-Schlagbohrer', 'Munition: 60 normal, 12 Ex, 100 Ex-Ex'],
 			notes: [],
 			magic: {
+				tradition: {
+					name: 'Chaosmagie',
+					concept: 'Moar PAUA!',
+					healing: 0,
+					illusion: 0,
+					combat: 5,
+					manipulation: 0,
+					perception: -5,
+					drainAttributes: 'Logik + Willenskraft + 1 (10)'
+				},
+				foci: [
+					{ 
+						name: 'Kraftfokus',
+						rating: 2
+					},
+					{
+						name: 'Zauberspeicher',
+						rating: 3
+					}
+				],
+				equipment: ['Mage-Sight Brille mit 10m Kabel', 'Pocket-Mage Stufe 4'],
+				spells: [
+					{
+						name: 'Falsche Erinnerung',
+						type: 'M',
+						range: 'BF',
+						duration: 'P',
+						drain: 'K/2-1'
+					},
+					{
+						name: 'Gedankenmuster',
+						type: 'M',
+						range: 'B',
+						duration: 'A',
+						drain: 'K/2'
+					},
+					{
+						name: 'Heisses Eisen',
+						type: 'M',
+						range: 'BF (F)',
+						duration: 'A',
+						drain: 'K/2-1'
+					},
+					{
+						name: 'Hellsicht',
+						type: 'M',
+						range: 'B',
+						duration: 'A',
+						drain: 'K/2-1'
+					},
+					{
+						name: 'Manablitz',
+						type: 'M',
+						range: 'BF',
+						duration: 'S',
+						drain: 'K/2'
+					},
+					{
+						name: 'Panzerung',
+						type: 'P',
+						range: 'BF',
+						duration: 'A',
+						drain: 'K/2+3'
+					},
+					{
+						name: 'Reflexe steigern',
+						type: 'M',
+						range: 'B',
+						duration: 'A',
+						drain: 'K/2+2'
+					},
+					{
+						name: 'Zauberfinger',
+						type: 'P',
+						range: 'BF',
+						duration: 'A',
+						drain: 'K/2+1'
+					},
+					{
+						name: 'Betäubungsball',
+						type: 'M',
+						range: 'BF (F)',
+						duration: 'S',
+						drain: 'K/2+1'
+					},
+					{
+						name: 'Verbesserte Unsichtbarkeit',
+						type: 'P',
+						range: 'BF',
+						duration: 'A',
+						drain: 'K/2+1'
+					},
+					{
+						name: 'Beeinflussen',
+						type: 'M',
+						range: 'BF',
+						duration: 'A',
+						drain: 'K/2+1'
+					},
+					{
+						name: 'Levitieren',
+						type: 'P',
+						range: 'BF',
+						duration: 'A',
+						drain: 'K/2+1'
+					},
+					{
+						name: 'Heilen',
+						type: 'M',
+						range: 'B',
+						duration: 'P',
+						drain: 'Dmg-2'
+					}
+				],
+				initiation: {
+					level: 1,
+					powers: ['dies', 'das']
+				},
+				patron: {
+					name: 'Das fliegende Spaghettimonster',
+					advantages: ['Pasta', 'Fleischlöße'],
+					disadvantages: ['kein Sushi', 'Diskussionen mit Christen']
+				},
+				spirits: [
+					{
+						name: 'Feuergeist',
+						level: 4,
+						services: 2,
+						bound: true,
+						powers: 'Elementarer Angriff, Leuchten'
+					},
+					{
+						name: 'Luftgeist',
+						level: 2,
+						services: 3,
+						bound: false,
+						powers: 'Transport, Unfall'
+					}
+				],
 				adeptPowers: [
 					{
 						name: 'Gesteigerte Reflexe',
@@ -247,7 +386,28 @@ characterSheetServices.factory('Character', function() {
 					},
 				]
 			},
-			technomancy: null
+			technomancy: {
+				sprites: [
+					{
+						name: 'Deus',
+						level: 20,
+						services: 1,
+						bound: true,
+						powers: 'Matrixcrash'
+					},
+					{
+						name: 'Toaster-AI',
+						level: 1,
+						services: '∞',
+						bound: true,
+						powers: 'Toasten, Toast verbrennen, Haustür öffnen'
+					}
+				],
+				submersion: {
+					level: 1,
+					powers: ['noch', 'was']
+				}
+			}
 		}
 	}
 	

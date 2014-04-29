@@ -239,6 +239,17 @@ characterSheetControllers.directive('csSr4Lifestyles', function() {
 	}
 });
 
+characterSheetControllers.directive('csSr4Equipment', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			equipment: '=',
+			magic: '='
+		},
+		templateUrl: 'partials/sr4/equipment.html'
+	}
+});
+
 characterSheetControllers.directive('csSr4Magic', function() {
 	return {
 		restrict: 'E',
@@ -246,6 +257,78 @@ characterSheetControllers.directive('csSr4Magic', function() {
 			magic: '='
 		},
 		templateUrl: 'partials/sr4/magic.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4MagicTradition', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			tradition: '='
+		},
+		templateUrl: 'partials/sr4/magic_tradition.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4MagicFoci', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			foci: '='
+		},
+		templateUrl: 'partials/sr4/magic_foci.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4MagicPatron', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			patron: '='
+		},
+		templateUrl: 'partials/sr4/magic_patron.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4MagicSpells', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			spells: '='
+		},
+		templateUrl: 'partials/sr4/magic_spells.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4Initiation', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			initiation: '=',
+			magic: '='
+		},
+		templateUrl: 'partials/sr4/initiation.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4Spirits', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			spirits: '=',
+			magic: '='
+		},
+		templateUrl: 'partials/sr4/spirits.html'
+	}
+});
+
+characterSheetControllers.directive('csSr4AdeptPowers', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			adeptPowers: '='
+		},
+		templateUrl: 'partials/sr4/adept_powers.html'
 	}
 });
 
@@ -259,3 +342,13 @@ characterSheetControllers.directive('csSr4Technomancy', function() {
 	}
 });
 
+characterSheetControllers.directive('csKeyValueRow', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			key: '=',
+			value: '='
+		},
+		template: '<div class="key-value-row" ng-show="\'{{value}}\'"><div class="key-value-key">{{key}}</div><div class="key-value-value">{{value}}</div></div>'
+	}
+})
