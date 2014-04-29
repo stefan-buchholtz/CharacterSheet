@@ -151,7 +151,7 @@ characterSheetServices.factory('Character', function() {
 				}
 			],
 			comlink: {
-				comlink: 'Renraku Sensei',
+				name: 'Renraku Sensei',
 				operatingSystem: 'Renraku Ichi',
 				processor: 2,
 				system: 2,
