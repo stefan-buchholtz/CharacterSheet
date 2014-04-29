@@ -231,11 +231,11 @@ characterSheetServices.factory('Character', function() {
 				tradition: {
 					name: 'Chaosmagie',
 					concept: 'Moar PAUA!',
-					healing: 0,
-					illusion: 0,
-					combat: 5,
-					manipulation: 0,
-					perception: -5,
+					healingBonus: 0,
+					illusionBonus: 0,
+					combatBonus: 5,
+					manipulationBonus: 0,
+					perceptionBonus: -5,
 					drainAttributes: 'Logik + Willenskraft + 1 (10)'
 				},
 				foci: [
