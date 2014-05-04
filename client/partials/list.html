@@ -1,0 +1,26 @@
+<div class="container" ng-controller="CharacterListCtrl">
+	<div class="sixteen columns remove-bottom">
+		<h1 style="margin-top: 40px; text-align: right">Charaktere</h1>
+	</div>
+	<div class="sixteen columns">
+		<h2 style="margin-top: 0px;">Charaktere</h2>
+		<div class="padded-content">
+			<table class="striped" id="characters">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>System</th>
+						<th>öffentlich</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="character in characters">
+						<td><a href="#/character/{{character.id}}">{{character.name}}</a></td>
+						<td>{{character.rule_system}}</td>
+						<td class="value"><input type="checkbox" ng-model="character.is_public" ng-true-value="1" ng-false-value="0"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

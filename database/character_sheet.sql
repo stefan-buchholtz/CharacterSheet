@@ -63,3 +63,8 @@ CREATE USER charactersheet@localhost IDENTIFIED BY 'HVtYYZN3rkd8iX';
 GRANT SELECT, UPDATE, INSERT, DELETE ON character_sheet.* TO charactersheet@localhost;
 --rollback REVOKE SELECT, UPDATE, INSERT, DELETE ON character_sheet.* FROM charactersheet@localhost;
 
+--changeset SB:2014_05_04_01
+ALTER TABLE character_sheet.characters ADD (
+	is_public BIT NOT NULL DEFAULT 0
+);
+--rollback ALTER TABLE character_sheet.characters DROP COLUMN is_public;

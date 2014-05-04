@@ -1,86 +1,96 @@
 (function(angular) {
 	'use strict';
 	
-	var characterSheetControllers = angular.module('characterSheetControllers', []);
+	var sr4CharacterSheet = angular.module('sr4CharacterSheet', ['characterSheetServices']);
+	
+	function sortSkills(skills, attributes) {
+		skills = skills.map(function(skill) {
+			skill = angular.copy(skill);
+			skill.attributeValue = attributes[skill.attribute];
+			return skill;
+		}).sort(function(a, b) {
+			return a.name.localeCompare(b.name);
+		});
+		return {
+			actionSkills: skills.filter(function(skill) {
+				return skill.type === 'action';
+			}),
+			knowledgeSkills: skills.filter(function(skill) {
+				return skill.type === 'knowledge';
+			})
+		};
+	}
+	
+	function balanceSkills($scope, actionSkills, knowledgeSkills) {
+		var columnHeight;
+		if ( actionSkills.length > knowledgeSkills.length ) {
+			columnHeight = Math.ceil(actionSkills.length / 2) > knowledgeSkills.length ? Math.ceil(actionSkills.length / 2) : knowledgeSkills.length;
+			if ( columnHeight % 2 === 1 ) { 
+				columnHeight++;
+			}
+			$scope.leftSkillColumn = {
+				skills: actionSkills.slice(0, columnHeight),
+				skillType: 'Aktionsfertigkeiten',
+				repeatHeader: false,
+				wrapperClass: 'left-column-content'
+			};
+			$scope.middleSkillColumn = {
+				skills: actionSkills.slice(columnHeight),
+				skillType: 'Aktionsfertigkeiten',
+				repeatHeader: true,
+				wrapperClass: 'inner-column-content'
+			};
+			$scope.rightSkillColumn = {
+				skills: knowledgeSkills,
+				skillType: 'Wissensfertigkeiten',
+				repeatHeader: false,
+				wrapperClass: 'right-column-content'
+			};
+		} else {
+			columnHeight = Math.ceil(knowledgeSkills.length / 2) > actionSkills.length ? Math.ceil(knowledgeSkills.length / 2) : actionSkills.length;
+			if ( columnHeight % 2 === 1 ) { 
+				columnHeight++;
+			}
+			$scope.leftSkillColumn = {
+				skills: actionSkills,
+				skillType: 'Aktionsfertigkeiten',
+				repeatHeader: false,
+				wrapperClass: 'left-column-content'
+			};
+			$scope.middleSkillColumn = {
+				skills: knowledgeSkills.slice(0, columnHeight),
+				skillType: 'Wissensfertigkeiten',
+				repeatHeader: false,
+				wrapperClass: 'inner-column-content'
+			};
+			$scope.rightSkillColumn = {
+				skills: knowledgeSkills.slice(columnHeight),
+				skillType: 'Wissensfertigkeiten',
+				repeatHeader: true,
+				wrapperClass: 'right-column-content'
+			};
+		}
+	}
 
-	characterSheetControllers.controller('Sr4CharacterSheetCtrl', ['$scope', 'Character',
-		function($scope, Character) {
-			$scope.character = Character.get(function(character) {
+	sr4CharacterSheet.controller('Sr4CharacterSheetCtrl', ['$scope', '$routeParams', 'Character',
+		function($scope, $routeParams, Character) {
+			$scope.character = Character.get({characterId: $routeParams.characterId}, function(character) {
 				var characterData = character.data;
-
-				var skills = characterData.skills.map(function(skill) {
-					skill.attributeValue = characterData.attributes[skill.attribute];
-					return skill;
-				}).sort(function(a, b) {
-					return a.name.localeCompare(b.name);
-				});
-				var actionSkills = skills.filter(function(skill) {
-					return skill.type === 'action';
-				});
-				var knowledgeSkills = skills.filter(function(skill) {
-					return skill.type === 'knowledge';
-				});
-
-				var columnHeight;
-				if ( actionSkills.length > knowledgeSkills.length ) {
-					columnHeight = Math.ceil(actionSkills.length / 2) > knowledgeSkills.length ? Math.ceil(actionSkills.length / 2) : knowledgeSkills.length;
-					if ( columnHeight % 2 === 1 ) { 
-						columnHeight++;
-					}
-					$scope.leftSkillColumn = {
-						skills: actionSkills.slice(0, columnHeight),
-						skillType: 'Aktionsfertigkeiten',
-						repeatHeader: false,
-						wrapperClass: 'left-column-content'
-					};
-					$scope.middleSkillColumn = {
-						skills: actionSkills.slice(columnHeight),
-						skillType: 'Aktionsfertigkeiten',
-						repeatHeader: true,
-						wrapperClass: 'inner-column-content'
-					};
-					$scope.rightSkillColumn = {
-						skills: knowledgeSkills,
-						skillType: 'Wissensfertigkeiten',
-						repeatHeader: false,
-						wrapperClass: 'right-column-content'
-					};
-				} else {
-					columnHeight = Math.ceil(knowledgeSkills.length / 2) > actionSkills.length ? Math.ceil(knowledgeSkills.length / 2) : actionSkills.length;
-					if ( columnHeight % 2 === 1 ) { 
-						columnHeight++;
-					}
-					$scope.leftSkillColumn = {
-						skills: actionSkills,
-						skillType: 'Aktionsfertigkeiten',
-						repeatHeader: false,
-						wrapperClass: 'left-column-content'
-					};
-					$scope.middleSkillColumn = {
-						skills: knowledgeSkills.slice(0, columnHeight),
-						skillType: 'Wissensfertigkeiten',
-						repeatHeader: false,
-						wrapperClass: 'inner-column-content'
-					};
-					$scope.rightSkillColumn = {
-						skills: knowledgeSkills.slice(columnHeight),
-						skillType: 'Wissensfertigkeiten',
-						repeatHeader: true,
-						wrapperClass: 'right-column-content'
-					};			
-				}
-
+				
+				var skills = sortSkills(characterData.skills, characterData.attributes);
+				balanceSkills($scope, skills.actionSkills, skills.knowledgeSkills);
+				
 				$scope.rangedWeaponCount = characterData.rangedWeapons ? characterData.rangedWeapons.length : 0;
 				$scope.meleeWeaponCount = characterData.meleeWeapons ? characterData.meleeWeapons.length : 0;
 				$scope.armorCount = characterData.armor ? characterData.armor.length : 0;
 				if ( $scope.meleeWeaponCount ) {
 					$scope.meleeWeaponDisplay = ($scope.rangedWeaponCount + $scope.meleeWeaponCount <= $scope.armorCount) ? 'left' : 'right';
-				}			
+				}
 			});
 		}
 	]);
 
-	characterSheetControllers.directive('csSr4Attributes', function() {
+	sr4CharacterSheet.directive('csSr4Attributes', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -90,7 +100,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4SkillTable', function() {
+	sr4CharacterSheet.directive('csSr4SkillTable', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -100,7 +110,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4ConditionMonitor', function() {
+	sr4CharacterSheet.directive('csSr4ConditionMonitor', function() {
 		return {
 			restrict: 'E',
 			templateUrl: 'partials/sr4/conditionMonitor.html',
@@ -144,7 +154,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4RangedWeapons', function() {
+	sr4CharacterSheet.directive('csSr4RangedWeapons', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -154,7 +164,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4MeleeWeapons', function() {
+	sr4CharacterSheet.directive('csSr4MeleeWeapons', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -164,7 +174,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Armor', function() {
+	sr4CharacterSheet.directive('csSr4Armor', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -174,7 +184,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Comlink', function() {
+	sr4CharacterSheet.directive('csSr4Comlink', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -184,7 +194,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Cyberware', function() {
+	sr4CharacterSheet.directive('csSr4Cyberware', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -194,7 +204,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Connections', function() {
+	sr4CharacterSheet.directive('csSr4Connections', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -204,7 +214,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Sins', function() {
+	sr4CharacterSheet.directive('csSr4Sins', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -214,7 +224,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Licenses', function() {
+	sr4CharacterSheet.directive('csSr4Licenses', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -224,7 +234,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Vehicles', function() {
+	sr4CharacterSheet.directive('csSr4Vehicles', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -234,7 +244,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Lifestyles', function() {
+	sr4CharacterSheet.directive('csSr4Lifestyles', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -244,7 +254,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Equipment', function() {
+	sr4CharacterSheet.directive('csSr4Equipment', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -255,7 +265,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Magic', function() {
+	sr4CharacterSheet.directive('csSr4Magic', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -265,7 +275,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4MagicTradition', function() {
+	sr4CharacterSheet.directive('csSr4MagicTradition', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -275,7 +285,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4MagicFoci', function() {
+	sr4CharacterSheet.directive('csSr4MagicFoci', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -285,7 +295,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4MagicPatron', function() {
+	sr4CharacterSheet.directive('csSr4MagicPatron', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -295,7 +305,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4MagicSpells', function() {
+	sr4CharacterSheet.directive('csSr4MagicSpells', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -305,7 +315,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Initiation', function() {
+	sr4CharacterSheet.directive('csSr4Initiation', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -316,7 +326,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Spirits', function() {
+	sr4CharacterSheet.directive('csSr4Spirits', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -327,7 +337,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4AdeptPowers', function() {
+	sr4CharacterSheet.directive('csSr4AdeptPowers', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -337,7 +347,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csSr4Technomancy', function() {
+	sr4CharacterSheet.directive('csSr4Technomancy', function() {
 		return {
 			restrict: 'E',
 			scope: {
@@ -347,7 +357,7 @@
 		};
 	});
 
-	characterSheetControllers.directive('csKeyValueRow', function() {
+	sr4CharacterSheet.directive('csKeyValueRow', function() {
 		return {
 			restrict: 'E',
 			scope: {
