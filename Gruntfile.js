@@ -7,9 +7,9 @@ module.exports = function(grunt) {
 				command: [
 					'rm -r build',
 					'mkdir build',
-					'cp -r api config database services app.js config.js server.js database.js build/',
-					'mkdir build/app',
-					'cp -r app/images build/app/'
+					'cp -r server server.js build/',
+					'mkdir build/client',
+					'cp -r client/images build/client/'
 				].join('; ')
 			},
 			cleanup: {
@@ -27,8 +27,8 @@ module.exports = function(grunt) {
 			},
 			
 			dist: {
-				src: ['build/tmp/bower.js', 'app/js/**/*.js'],
-				dest: 'build/app/js/application.js'
+				src: ['build/tmp/bower.js', 'client/js/**/*.js'],
+				dest: 'build/client/js/application.js'
 			}
 		},
 		uglify: {
@@ -38,14 +38,14 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'build/app/js/application.min.js': ['<%= concat.dist.dest %>']
+					'build/client/js/application.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
 		htmlrefs: {
 			dist: {
 				expand: true,
-				src: 'app/**/*.html',
+				src: 'client/**/*.html',
 				dest: 'build/'
 			}
 		},
@@ -53,17 +53,24 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					removeComments: true,
-					collapseWhitespace: true
+					collapseWhitespace: true,
+					conservativeCollapse: true
 				},
-				files: 'build/app**/*.html'
+				expand: true,
+				cwd: 'build',
+				src: ['**/*.html'],
+				dest: 'build/'
 			}
 		},
 		cssmin: {
 			combine: {
 				files: {
-					'build/app/css/styles.min.css': ['app/stylesheets/base.css', 'app/stylesheets/skeleton.css', 'app/stylesheets/layout.css'],
+					'build/client/css/styles.min.css': ['client/stylesheets/base.css', 'client/stylesheets/skeleton.css', 'client/stylesheets/layout.css'],
 				}
 			}
+		},
+		jshint: {
+			files: ['**/*.js', ]
 		}
 	});
 	
@@ -74,6 +81,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-htmlrefs');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	
-	grunt.registerTask('dist', ['shell:dist', 'htmlrefs', 'htmlmin', 'bower_concat', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('dist', ['shell:dist', 'htmlrefs', 'bower_concat', 'concat', 'uglify', 'cssmin']);
 }

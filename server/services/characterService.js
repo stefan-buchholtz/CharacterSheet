@@ -1,5 +1,5 @@
 var database = require('../database.js'),
-	sql = require('../database/sql.json').characters;
+	sql = require('../sql.json').characters;
 
 module.exports.list = function(userId, callback) {
 	if ( typeof callback !== "function" ) {

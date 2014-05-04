@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var debug = require('debug')('server'),
-	app = require('./app'),
+	app = require('./server/app'),
 	name = 'CharacterSheet';
 
 app.set('port', process.env.PORT || 8000);

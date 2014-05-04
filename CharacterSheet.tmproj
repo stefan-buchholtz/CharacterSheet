@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Gruntfile.js</string>
+	<string>server/services/userService.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -22,37 +22,29 @@
 			<key>filename</key>
 			<string>Gruntfile.js</string>
 			<key>lastUsed</key>
-			<date>2014-05-04T11:29:08Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2014-05-04T13:00:58Z</date>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>api</string>
+			<string>app</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
 			<key>sourceDirectory</key>
-			<string>api</string>
+			<string>app</string>
 		</dict>
 		<dict>
 			<key>expanded</key>
 			<true/>
 			<key>name</key>
-			<string>app</string>
+			<string>server</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
 			<key>sourceDirectory</key>
-			<string>app</string>
+			<string>server</string>
 		</dict>
 		<dict>
-			<key>name</key>
-			<string>config</string>
-			<key>regexFolderFilter</key>
-			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
-			<key>sourceDirectory</key>
-			<string>config</string>
-		</dict>
-		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>database</string>
 			<key>regexFolderFilter</key>
@@ -62,43 +54,11 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>services</string>
-			<key>regexFolderFilter</key>
-			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
-			<key>sourceDirectory</key>
-			<string>services</string>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>htmldummy</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
 			<key>sourceDirectory</key>
 			<string>htmldummy</string>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>app.js</string>
-			<key>lastUsed</key>
-			<date>2014-05-03T18:43:15Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>config.js</string>
-			<key>lastUsed</key>
-			<date>2014-05-03T17:13:56Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>server.js</string>
-			<key>lastUsed</key>
-			<date>2014-05-04T10:22:35Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>database.js</string>
-			<key>lastUsed</key>
-			<date>2014-05-04T09:27:21Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -116,56 +76,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>53</integer>
+				<integer>23</integer>
 				<key>line</key>
-				<integer>76</integer>
+				<integer>72</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>28</integer>
-		</dict>
-		<key>app.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>15</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>15</integer>
-				<key>line</key>
-				<integer>18</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/js/app.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>20</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>14</integer>
+			<integer>38</integer>
 		</dict>
 		<key>app/js/controllers.js</key>
 		<dict>
@@ -181,20 +99,6 @@
 			<key>firstVisibleLine</key>
 			<integer>94</integer>
 		</dict>
-		<key>app/js/services.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>app/partials/sr4/adept_powers.html</key>
 		<dict>
 			<key>caret</key>
@@ -203,6 +107,34 @@
 				<integer>0</integer>
 				<key>line</key>
 				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/armor.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/partials/sr4/attributes.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>134</integer>
+				<key>line</key>
+				<integer>27</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -221,7 +153,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>57</integer>
+			<integer>0</integer>
 		</dict>
 		<key>app/partials/sr4/conditionMonitor.html</key>
 		<dict>
@@ -237,42 +169,14 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>config.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/development.json</key>
+		<key>app/partials/sr4/equipment.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>32</integer>
 				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/master.json</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>4</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -317,20 +221,6 @@
 				<integer>0</integer>
 				<key>line</key>
 				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>database/sql.json</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>134</integer>
-				<key>line</key>
-				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -393,17 +283,62 @@
 			<key>firstVisibleLine</key>
 			<integer>53</integer>
 		</dict>
+		<key>server/services/characterService.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>19</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>server/services/rulesystemService.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>19</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>server/services/userService.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>19</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>app/partials/sr4/base.html</string>
 		<string>Gruntfile.js</string>
-		<string>app/index.html</string>
+		<string>app/partials/sr4/attributes.html</string>
+		<string>server/services/characterService.js</string>
+		<string>server/services/rulesystemService.js</string>
+		<string>server/services/userService.js</string>
+		<string>app/partials/sr4/armor.html</string>
 		<string>app/partials/sr4/adept_powers.html</string>
+		<string>app/partials/sr4/equipment.html</string>
 		<string>app/partials/sr4/conditionMonitor.html</string>
 		<string>app/js/controllers.js</string>
-		<string>app/js/app.js</string>
-		<string>app/js/services.js</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

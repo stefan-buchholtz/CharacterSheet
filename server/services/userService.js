@@ -1,5 +1,5 @@
 var database = require('../database.js'),
-	sql = require('../database/sql.json').users,
+	sql = require('../sql.json').users,
 	bcrypt = require('bcrypt'),
 	cost = 12;
 
