@@ -1,0 +1,20 @@
+{
+	"characters": {
+		"selectAll": "SELECT c.id, c.user_id, c.name, c.rule_system_id, rs.name AS rule_system, rs.template_path FROM characters c JOIN rule_systems rs ON rs.id = c.rule_system_id ORDER BY c.name",
+		"selectForUser": "SELECT c.id, c.user_id, c.name, c.rule_system_id, rs.name AS rule_system, rs.template_path FROM characters c JOIN rule_systems rs ON rs.id = c.rule_system_id WHERE user_id = ? ORDER BY c.name",
+		"selectData": "SELECT character_data, character_status FROM characters WHERE id = ? AND user_id = ?",
+		"updateData": "UPDATE characters SET character_data = ?, character_status = ? WHERE id = ? AND user_id = ?",
+		"updateStatus": "UPDATE characters SET character_status = ? WHERE id = ? AND user_id = ?",
+		"insert": "INSERT INTO characters (user_id, name, rule_system_id, character_data, character_status) VALUES (?, ?, ?, ?, ?)",
+		"delete": "DELETE FROM characters WHERE id = ? AND user_id = ?"
+	},
+	"ruleSystems": {
+		"selectAll": "SELECT id, name, template_path FROM rule_systems ORDER BY name"
+	},
+	"users": {
+		"selectAll": "SELECT id, user_name, email, new_email, is_active, is_admin FROM users ORDER BY user_name",
+		"select": "SELECT id, user_name, email, new_email, is_active, is_admin FROM users WHERE id = ?",
+		"selectByEmail": "SELECT id, user_name, email, new_email, password, is_active, is_admin FROM users WHERE email = ? AND is_active = 1",
+		"updatePassword": "UPDATE users SET password = ? WHERE id = ?"
+	}
+}

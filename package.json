@@ -1,33 +1,44 @@
 {
-	"version": "0.0.0",
-	"private": true,
-	"name": "CharacterSheet",
-	"description": "Online character sheet for Shadowrun 4 (and eventually other tabletop RPGs)",
-	"repository": "https://github.com/stefan-buchholtz/CharacterSheet",
-	"license": "MIT",
-	"devDependencies": {
-		"karma": "~0.10",
-		"protractor": "~0.20.1",
-		"http-server": "^0.6.1",
-		"bower": "^1.3.1",
-		"shelljs": "^0.2.6"
-	},
-	"scripts": {
-		"postinstall": "bower install",
-
-		"prestart": "npm install",
-		"start": "http-server -p 8000",
-
-		"pretest": "npm install",
-		"test": "karma start test/karma.conf.js",
-		"test-single-run": "karma start test/karma.conf.js --single-run",
-
-		"preupdate-webdriver": "npm install",
-		"update-webdriver": "webdriver-manager update",
-
-		"preprotractor": "npm run update-webdriver",
-		"protractor": "protractor test/protractor-conf.js",
-
-		"update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
-	}
+  "version": "0.0.0",
+  "private": true,
+  "name": "CharacterSheet",
+  "description": "Online character sheet for Shadowrun 4 (and eventually other tabletop RPGs)",
+  "repository": "https://github.com/stefan-buchholtz/CharacterSheet",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "debug": "^0.8.1",
+    "express": "^4.1.1",
+    "morgan": "^1.0.0",
+    "mysql2": "^0.12.1",
+    "node-conf": "0.0.6",
+    "serve-favicon": "^2.0.0",
+    "bcrypt": "^0.7.8"
+  },
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "grunt": "^0.4.4",
+    "grunt-bower-concat": "^0.2.4",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-htmlmin": "^0.2.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-htmlrefs": "^0.5.0",
+    "grunt-shell": "^0.7.0",
+    "karma": "~0.10",
+    "protractor": "~0.20.1",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "postinstall": "bower install; grunt",
+    "prestart": "npm install",
+    "pretest": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor test/protractor-conf.js",
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  }
 }

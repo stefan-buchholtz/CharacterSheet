@@ -1,0 +1,7 @@
+{
+	"database": {
+		"socketPath": "/var/run/mysql.sock",
+		"user": "charactersheet",
+		"password": "HVtYYZN3rkd8iX"
+	}
+}

@@ -54,3 +54,12 @@ CREATE TABLE character_sheet.characters (
 	CONSTRAINT fk_character_rulesystem FOREIGN KEY (rule_system_id) REFERENCES rule_systems(id)
 ) ENGINE INNODB;
 --rollback DROP TABLE character_sheet.characters;
+
+--changeset SB:2014_05_03_01
+CREATE USER charactersheet@localhost IDENTIFIED BY 'HVtYYZN3rkd8iX';
+--rollback DROP USER charactersheet@localhost;
+
+--changeset SB:2014_05_03_02
+GRANT SELECT, UPDATE, INSERT, DELETE ON character_sheet.* TO charactersheet@localhost;
+--rollback REVOKE SELECT, UPDATE, INSERT, DELETE ON character_sheet.* FROM charactersheet@localhost;
+
