@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-
+	'use strict';
+	
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		shell: {
@@ -70,7 +71,48 @@ module.exports = function(grunt) {
 			}
 		},
 		jshint: {
-			files: ['**/*.js', ]
+			options: {
+				curly: true,
+				freeze: true,
+				immed: true,
+				latedef: true,
+				newcap: true,
+				noarg: true,
+				noempty: true,
+				nonbsp: true,
+				nonew: true,
+				quotmark: 'single',
+				undef: true,
+				unused: true,
+				strict: true,
+				trailing: true
+			},
+			client: {
+				files: {
+					src: ['client/**/*.js'],
+				},
+				options: {
+					globals: {
+						angular: true
+					}
+				}
+			},
+			server: {
+				files: {
+					src: ['Gruntfile.js', 'server/**/*.js']
+				},
+				options: {
+					globalstrict: true,
+					globals: {
+						process: true,
+						console: true,
+						module: true,
+						require: true,
+						__filename: true,
+						__dirname: true
+					}
+				}
+			}
 		}
 	});
 	
@@ -85,4 +127,4 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('dist', ['shell:dist', 'htmlrefs', 'bower_concat', 'concat', 'uglify', 'cssmin']);
-}
+};

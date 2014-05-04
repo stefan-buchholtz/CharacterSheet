@@ -1,18 +1,20 @@
+'use strict';
+
 var database = require('../database.js'),
 	sql = require('../sql.json').users,
 	bcrypt = require('bcrypt'),
 	cost = 12;
 
 module.exports.listAll = function(callback) {
-	if ( typeof callback !== "function" ) {
+	if ( typeof callback !== 'function' ) {
 		throw new Error('userService.listAll(): invalid callback');
 	}
 	
 	database.query(sql.selectAll, callback);
-}
+};
 
 module.exports.get = function(userId, callback) {
-	if ( typeof callback !== "function" ) {
+	if ( typeof callback !== 'function' ) {
 		throw new Error('userService.get(): invalid callback');
 	}
 	
@@ -22,10 +24,10 @@ module.exports.get = function(userId, callback) {
 		}
 		callback(null, result.length === 1 ? result[0] : null);
 	});
-}
+};
 
 module.exports.checkLogin = function(email, password, callback) {
-	if ( typeof callback !== "function" ) {
+	if ( typeof callback !== 'function' ) {
 		throw new Error('userService.checkLogin(): invalid callback');
 	}
 	
@@ -45,10 +47,10 @@ module.exports.checkLogin = function(email, password, callback) {
 			callback(null, compareResult ? user : null);
 		});
 	});
-}
+};
 
 module.exports.changePassword = function(userId, password, callback) {
-	if ( typeof callback !== "function" ) {
+	if ( typeof callback !== 'function' ) {
 		throw new Error('userService.checkLogin(): invalid callback');
 	}
 	
@@ -60,4 +62,4 @@ module.exports.changePassword = function(userId, password, callback) {
 			database.query(sql.updatePassword, [passwordHash, userId], callback);
 		});
 	});
-}
+};

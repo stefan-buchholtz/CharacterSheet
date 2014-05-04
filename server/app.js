@@ -1,10 +1,11 @@
+'use strict';
+
 var express = require('express'),
 	path = require('path'),
 	favicon = require('serve-favicon'),
 	logger = require('morgan'),
 	bodyParser = require('body-parser'),
-	conf = require('node-conf'),
-	characterApi = require('./api/characters.js')
+	characterApi = require('./api/characters.js');
 
 var app = express();
 //app.set('view engine', 'jade');
@@ -30,7 +31,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.json(err.status || 500, {
 			message: err.message,
 			stack: err.stack
@@ -40,7 +41,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     res.json(err.status || 500, {
 		message: err.message
 	});

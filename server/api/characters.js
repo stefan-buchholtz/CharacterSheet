@@ -1,3 +1,5 @@
+'use strict';
+
 var router = require('express').Router(),
 	characterService = require('../services/characterService.js');
 
@@ -12,9 +14,22 @@ router.get('/characters', function(req, res) {
 	});
 });
 
+var makeUpdateDeleteCallback = function(res, next) {
+	return function(err, result) {
+		if (err) {
+			return next(err);
+		}
+		if ( !result.affectedRows ) {
+			err = new Error('character not found');
+			err.status = 404;
+			return next(err);
+		}
+		res.json(200, { message: 'success'});
+	};
+};
+
 router.route('/characters/:characterId')
 	.get(function(req, res, next) {
-		console.log('request character id', req.params.characterId)
 		characterService.getData(req.params.characterId, userId, function(err, character) {
 			if (err) {
 				return next(err);
@@ -42,25 +57,14 @@ router.route('/characters/:characterId')
 			return next(err);
 		}
 		
-		var cb = function(err, result) {
-			if (err) {
-				return next(err);
-			}
-			if ( !result.affectedRows ) {
-				err = new Error('character not found');
-				err.status = 404;
-				return next(err);
-			}
-			res.json(200, { message: 'success'});
-		}
 		if ( data ) {
-			characterService.updateData(req.params.characterId, userId, data, status, cb)
+			characterService.updateData(req.params.characterId, userId, data, status, makeUpdateDeleteCallback(res, next));
 		} else {
-			characterService.updateStatus(req.params.characterId, userId, status, cb)
+			characterService.updateStatus(req.params.characterId, userId, status, makeUpdateDeleteCallback(res, next));
 		}
 	})
 	.delete(function(req, res, next) {
-		
+		characterService.delete(req.params.characterId, userId, makeUpdateDeleteCallback(res, next));
 	});
 
 module.exports = router;

@@ -1,3 +1,5 @@
+'use strict';
+
 var mysql = require('mysql2'),
 	config = require('./config.js');
 	
@@ -8,7 +10,7 @@ module.exports.pool = pool;
 module.exports.getConnection = pool.getConnection;
 
 module.exports.query = function(sql, params, callback) {
-	if ( typeof params === "function" ) {
+	if ( typeof params === 'function' ) {
 		callback = params;
 		params = undefined;
 	}
@@ -21,4 +23,4 @@ module.exports.query = function(sql, params, callback) {
 			callback(err, result);
 		});
 	});
-}
+};
