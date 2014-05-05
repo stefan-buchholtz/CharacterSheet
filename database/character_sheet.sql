@@ -68,3 +68,16 @@ ALTER TABLE character_sheet.characters ADD (
 	is_public BIT NOT NULL DEFAULT 0
 );
 --rollback ALTER TABLE character_sheet.characters DROP COLUMN is_public;
+
+--changeset SB:2014_05_05_01
+ALTER TABLE character_sheet.characters MODIFY COLUMN
+	is_public TINYINT NOT NULL DEFAULT 0;
+
+--changeset SB:2014_05_05_02
+ALTER TABLE character_sheet.users MODIFY COLUMN
+	is_active TINYINT NOT NULL;
+
+--changeset SB:2014_05_05_03
+ALTER TABLE character_sheet.users MODIFY COLUMN
+	is_admin TINYINT NOT NULL;
+

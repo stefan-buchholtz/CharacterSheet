@@ -74,7 +74,8 @@
 
 	sr4CharacterSheet.controller('Sr4CharacterSheetCtrl', ['$scope', '$routeParams', 'Character',
 		function($scope, $routeParams, Character) {
-			$scope.character = Character.get({characterId: $routeParams.characterId}, function(character) {
+			var characterId = $routeParams.characterId;
+			$scope.character = Character.get({characterId: characterId}, function(character) {
 				var characterData = character.data;
 				
 				var skills = sortSkills(characterData.skills, characterData.attributes);
@@ -86,6 +87,13 @@
 				if ( $scope.meleeWeaponCount ) {
 					$scope.meleeWeaponDisplay = ($scope.rangedWeaponCount + $scope.meleeWeaponCount <= $scope.armorCount) ? 'left' : 'right';
 				}
+				
+				$scope.$watch('character.status', function(status, oldStatus) {
+					if ( status === oldStatus ) {
+						return;
+					}
+					Character.save({characterId: characterId}, { status: $scope.character.status });
+				}, true);
 			});
 		}
 	]);
@@ -116,7 +124,8 @@
 			templateUrl: 'partials/sr4/conditionMonitor.html',
 			scope: {
 				attributes: '=',
-				type: '='
+				type: '=',
+				status: '='
 			},
 			link: function(scope) {
 				scope.cellClick = function(event) {
@@ -124,13 +133,13 @@
 					if ( damage > scope.maxDamage ) {
 						return;
 					}
-					if (damage > scope.currentDamage) {
-						scope.currentDamage = damage;
+					if (damage > scope.status[scope.type]) {
+						scope.status[scope.type] = damage;
 					} else {
-						scope.currentDamage = damage - 1;
+						scope.status[scope.type] = damage - 1;
 					}
 				};
-				var expression = scope.type === 'physical' ? 'attributes.constitution' : 'attributes.willpower';
+				var expression = scope.type === 'physicalDamage' ? 'attributes.constitution' : 'attributes.willpower';
 				scope.$watch(expression, function(attributeValue) {
 					scope.maxDamage = 8 + Math.floor(attributeValue / 2);
 					scope.currentDamage = 0;

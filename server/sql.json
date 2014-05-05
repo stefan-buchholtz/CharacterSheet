@@ -1,10 +1,11 @@
 {
 	"characters": {
 		"selectAll": "SELECT c.id, c.user_id, c.name, c.is_public, c.rule_system_id, rs.name AS rule_system, rs.template_path FROM characters c JOIN rule_systems rs ON rs.id = c.rule_system_id ORDER BY c.name",
-		"selectForUser": "SELECT c.id, c.user_id, c.name, c.rule_system_id, rs.name AS rule_system, rs.template_path FROM characters c JOIN rule_systems rs ON rs.id = c.rule_system_id WHERE user_id = ? ORDER BY c.name",
+		"selectForUser": "SELECT c.id, c.user_id, c.name, c.is_public, c.rule_system_id, rs.name AS rule_system, rs.template_path FROM characters c JOIN rule_systems rs ON rs.id = c.rule_system_id WHERE user_id = ? ORDER BY c.name",
 		"selectData": "SELECT character_data, character_status FROM characters WHERE id = ? AND user_id = ?",
 		"updateData": "UPDATE characters SET character_data = ?, character_status = ? WHERE id = ? AND user_id = ?",
 		"updateStatus": "UPDATE characters SET character_status = ? WHERE id = ? AND user_id = ?",
+		"updateIsPublic": "UPDATE characters SET is_public = ? WHERE id = ? AND user_id = ?",
 		"insert": "INSERT INTO characters (user_id, name, rule_system_id, character_data, character_status) VALUES (?, ?, ?, ?, ?)",
 		"delete": "DELETE FROM characters WHERE id = ? AND user_id = ?"
 	},

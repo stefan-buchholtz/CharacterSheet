@@ -1,9 +1,9 @@
 <div class="conditionMonitor">
-	<h3>{{type === 'physical' ? 'Körperliche' : 'Geistige'}} Schadensleiste</h3>
-	<table id="{{type}}Damage">
+	<h3>{{type === 'physicalDamage' ? 'Körperliche' : 'Geistige'}} Schadensleiste</h3>
+	<table id="{{type}}">
 		<tr ng-repeat="row in rows">
-			<td ng-repeat="column in row.columns" class="conditionMonitorCell {{column.cellClass}}" ng-class="{selected: (currentDamage >= {{column.damage}})}" damage="{{column.damage}}" ng-click="cellClick($event);">&nbsp;{{column.content}}</td>
+			<td ng-repeat="column in row.columns" class="conditionMonitorCell {{column.cellClass}}" ng-class="{selected: (status[type] >= {{column.damage}})}" damage="{{column.damage}}" ng-click="cellClick($event);">&nbsp;{{column.content}}</td>
 		</tr>
 	</table>
-	<div class="conditionMonitorSubscript">8 + ({{type === 'physical' ? 'Konstitution' : 'Willenskraft'}} / 2)</div>
+	<div class="conditionMonitorSubscript">8 + ({{type === 'physicalDamage' ? 'Konstitution' : 'Willenskraft'}} / 2)</div>
 </div>

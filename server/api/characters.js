@@ -42,25 +42,30 @@ router.route('/characters/:characterId')
 			res.json(200, character);	
 		});
 	})
-	.put(function(req, res, next) {
+	.post(function(req, res, next) {
 		var err;
-		if ( req.body ) {
+		if ( !req.body ) {
 			err = new Error('expected JSON content');
 			err.status = 400;
 			return next(err);
 		}
-		var data = req.body.data,
-			status = req.body.status || null;
-		if ( !data && !status ) {
-			err = new Error('invalid content');
-			err.status = 400;
-			return next(err);
-		}
-		
-		if ( data ) {
-			characterService.updateData(req.params.characterId, userId, data, status, makeUpdateDeleteCallback(res, next));
+		console.log('POST /characters/' + req.params.characterId, 'body: ', req.body);
+		if ( typeof req.body.is_public === 'boolean' ) {
+			characterService.updateIsPublic(req.params.characterId, userId, req.body.is_public, makeUpdateDeleteCallback(res, next));
 		} else {
-			characterService.updateStatus(req.params.characterId, userId, status, makeUpdateDeleteCallback(res, next));
+			var data = req.body.data,
+				status = req.body.status || null;
+			if ( !data && !status ) {
+				err = new Error('invalid content');
+				err.status = 400;
+				return next(err);
+			}
+
+			if ( data ) {
+				characterService.updateData(req.params.characterId, userId, data, status, makeUpdateDeleteCallback(res, next));
+			} else {
+				characterService.updateStatus(req.params.characterId, userId, status, makeUpdateDeleteCallback(res, next));
+			}
 		}
 	})
 	.delete(function(req, res, next) {

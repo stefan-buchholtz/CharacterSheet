@@ -7,10 +7,19 @@ module.exports.list = function(userId, callback) {
 	if ( typeof callback !== 'function' ) {
 		throw new Error('characterService.list(): invalid callback');
 	}
+	function queryCallback(err, result) {
+		if ( err ) {
+			return callback(err);
+		}
+		result.forEach(function(row) {
+			row.is_public = row.is_public ? true : false;
+		});
+		callback(null, result);
+	}
 	if ( userId ) {
-		database.query(sql.selectForUser, [userId], callback);
+		database.query(sql.selectForUser, [userId], queryCallback);
 	} else { 
-		database.query(sql.selectAll, callback);
+		database.query(sql.selectAll, queryCallback);
 	}
 };
 
@@ -62,6 +71,14 @@ module.exports.updateStatus = function(characterId, userId, status, callback) {
 	}
 	
 	database.query(sql.updateStatus, [JSON.stringify(status), characterId, userId], callback);
+};
+
+module.exports.updateIsPublic = function(characterId, userId, isPublic, callback) {
+	if ( typeof callback !== 'function' ) {
+		throw new Error('characterService.updateStatus(): invalid callback');
+	}
+	
+	database.query(sql.updateIsPublic, [isPublic ? 1 : 0, characterId, userId], callback);
 };
 
 module.exports.delete = function(characterId, userId, callback) {
