@@ -113,6 +113,11 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+		},
+		bower: {
+			dev: {
+				dest: 'client/js'
+			}
 		}
 	});
 	
@@ -124,7 +129,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-bower');
 	
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['jshint', 'bower']);
 	grunt.registerTask('dist', ['shell:dist', 'htmlrefs', 'bower_concat', 'concat', 'uglify', 'cssmin']);
 };
