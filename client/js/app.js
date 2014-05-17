@@ -3,24 +3,28 @@
 
 	var characterSheetApp = angular.module('characterSheetApp', [
 		'ngRoute',
+		'ui.bootstrap',
+		'ui.bootstrap.tpls',
 		'characterList',
 		'sr4CharacterSheet',
-		'characterSheetServices'
+		'characterSheetServices',
+		'security'
 	]);
 
 	characterSheetApp.config(['$routeProvider',
 		function($routeProvider) {
 			$routeProvider
-				.when('/', {
+				.when('/list/:status', {
 					templateUrl: 'partials/list.html',
 					controller: 'CharacterListCtrl'
 				})
-				.when('/character/:characterId', {
+				.when('/character/:status/:characterId', {
 					templateUrl: 'partials/sr4/base.html',
 					controller: 'Sr4CharacterSheetCtrl'
 				})
 				.otherwise({
-					redirectTo: '/'
+					template: '<div></div>',
+					controller: 'StartPageCtrl'
 				});
 		}]);	
 })(angular);

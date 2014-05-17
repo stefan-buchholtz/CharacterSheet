@@ -89,12 +89,13 @@ module.exports = function(grunt) {
 			},
 			client: {
 				files: {
-					src: ['client/**/*.js'],
+					src: ['client/**/*.js']
 				},
 				options: {
 					globals: {
 						angular: true
-					}
+					},
+					ignores: ['client/js/angular.js', 'client/js/angular-route.js', 'client/js/angular-resource.js', 'client/js/angular-bootstrap.js']
 				}
 			},
 			server: {

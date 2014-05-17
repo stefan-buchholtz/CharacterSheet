@@ -5,19 +5,22 @@ var express = require('express'),
 	favicon = require('serve-favicon'),
 	logger = require('morgan'),
 	bodyParser = require('body-parser'),
-	characterApi = require('./api/characters.js');
+	expressJwt = require('express-jwt'),
+	characterApi = require('./api/characters.js'),
+	userApi = require('./api/user.js'),
+	config = require('./config.js');
 
 var app = express();
-//app.set('view engine', 'jade');
 
 app.use(favicon(path.join(__dirname, '../client/images/favicon.ico')));
 app.use(express.static(path.join(__dirname, '../client')));
-if (app.get('env') === 'development') {
-	app.use(express.static(path.join(__dirname, '../bower_components')));
-}
 app.use(logger('dev'));
 app.use(bodyParser.json({strict: true}));
+
+app.use('/api/private', expressJwt({secret: config.authentication.secret}));
+
 app.use('/api', characterApi);
+app.use('/api', userApi);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

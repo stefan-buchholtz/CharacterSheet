@@ -85,6 +85,37 @@ ul.unstyled-list li {
 	display: none;
 }
 
+/* Navigation bar */
+ul.topnav {
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	overflow: hidden;
+	background-color: #1F2D3D;
+}
+
+ul.topnav li {
+	float: left;
+	margin: 0px;
+}
+
+ul.topnav a {
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	padding: 5px;
+}
+
+ul.topnav a:link, ul.topnav a:visited {
+}
+
+ul.topnav a:hover, ul.topnav a:active {
+	background-color: #3B5675;
+}
+
 /* Tables */
 table {
 	width: 100%;
@@ -178,6 +209,11 @@ table#connections td.rating {
 		.comlink-field {
 			min-width: 110px;
 		}
+		
+		ul.topnav {
+			font-size: 80%;
+		}
+		
 		table.skills td.name {
 		}
 		table.skills td.rating {

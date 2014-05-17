@@ -3,7 +3,8 @@
 var database = require('../database.js'),
 	sql = require('../sql.json').users,
 	bcrypt = require('bcrypt'),
-	cost = 12;
+	cost = 12,
+	loginFailDelay = 3000;
 
 module.exports.listAll = function(callback) {
 	if ( typeof callback !== 'function' ) {
@@ -37,14 +38,21 @@ module.exports.checkLogin = function(email, password, callback) {
 		}
 		if ( result.length !== 1 ) {
 			// User not found
-			return callback(null, null);
+			setTimeout(callback, loginFailDelay, null, null);
+			return;
 		}
 		var user = result[0];
 		bcrypt.compare(password, user.password, function(err, compareResult) {
 			if ( err ) {
-				return callback(err);
+				setTimeout(callback, loginFailDelay, err);
+				return;
 			}
-			callback(null, compareResult ? user : null);
+			delete user.password;
+			if ( compareResult ) {
+				callback(null, user);
+			} else {
+				setTimeout(callback, loginFailDelay, null, null);
+			}
 		});
 	});
 };

@@ -7,7 +7,7 @@ module.exports.list = function(userId, callback) {
 	if ( typeof callback !== 'function' ) {
 		throw new Error('characterService.list(): invalid callback');
 	}
-	function queryCallback(err, result) {
+	database.query(sql.selectForUser, [userId], function (err, result) {
 		if ( err ) {
 			return callback(err);
 		}
@@ -15,12 +15,14 @@ module.exports.list = function(userId, callback) {
 			row.is_public = row.is_public ? true : false;
 		});
 		callback(null, result);
+	});
+};
+
+module.exports.listPublic = function(callback) {
+	if ( typeof callback !== 'function' ) {
+		throw new Error('characterService.list(): invalid callback');
 	}
-	if ( userId ) {
-		database.query(sql.selectForUser, [userId], queryCallback);
-	} else { 
-		database.query(sql.selectAll, queryCallback);
-	}
+	database.query(sql.selectPublic, callback);
 };
 
 module.exports.getData = function(characterId, userId, callback) {

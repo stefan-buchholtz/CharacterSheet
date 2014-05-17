@@ -33,6 +33,37 @@
 	margin-right: 8px;
 }
 
+/* Navigation bar */
+ul.topnav {
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	overflow: hidden;
+	background-color: #1F2D3D;
+}
+
+ul.topnav li {
+	float: left;
+	margin: 0px;
+}
+
+ul.topnav a {
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	padding: 5px;
+}
+
+ul.topnav a:link, ul.topnav a:visited {
+}
+
+ul.topnav a:hover, ul.topnav a:active {
+	background-color: #3B5675;
+}
+
 /* Fields */
 .textfield { border-bottom: 1px solid #181818 }
 .attribute-box {
@@ -150,6 +181,25 @@ table#connections td.rating {
 	font-size: 12px;
 }
 
+/* login dialog */
+#login-form {
+	margin-bottom: 0px;
+}
+#login-email, #login-password {
+	width: 248px;
+}
+.login-error {
+	margin-top: 20px;
+	padding: 8px;
+	width: 232px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #810E02;
+	background-color: #E22506;
+	text-align: center;
+	color: #fff;
+}
+
 /* #Media Queries
 ================================================== */
 
@@ -172,12 +222,19 @@ table#connections td.rating {
 			margin-left: 6px;
 			margin-right: 6px;
 		}
+		
+		/* navigation bar */
+		ul.topnav {
+			font-size: 80%;
+		}
+		
 		.appearance-field {
 			min-width: 102px;
 		}
 		.comlink-field {
 			min-width: 110px;
 		}
+
 		table.skills td.name {
 		}
 		table.skills td.rating {
@@ -186,6 +243,7 @@ table#connections td.rating {
 		table.skills td.attribute {
 			width: 50px;
 		}
+		
 		/* Zustandsmonitor */
 		.conditionMonitor {
 			width: 118px;
@@ -204,6 +262,14 @@ table#connections td.rating {
 		}
 		.responsive.mobile {
 			display: block;
+		}
+		
+		#login-email, #login-password {
+			width: calc(100% - 10px);
+		}
+		
+		.login-error {
+			width: calc(100% - 26px);
 		}
 	}
 

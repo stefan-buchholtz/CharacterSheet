@@ -1,6 +1,7 @@
 <div class="container" ng-controller="Sr4CharacterSheetCtrl">
+	<cs-topnav></cs-topnav>
 	<div class="sixteen columns remove-bottom">
-		<h1 style="margin-top: 40px; text-align: right">Shadowrun</h1>
+		<img src="images/shadowrun.png" width="265" height="44" alt="Shadowrun" style="float: right; margin-bottom: 10px;">
 	</div>
 	<div class="sixteen columns">
 		<h2 style="margin-top: 0px;">Charakterdaten</h2>
@@ -87,8 +88,8 @@
 	<div class="six columns">
 		<h2>Zustandsmonitor</h2>
 		<div class="padded-content">
-			<cs-sr4-condition-monitor attributes="character.data.attributes" status="character.status" type="'physicalDamage'"></cs-sr4-condition-monitor>
-			<cs-sr4-condition-monitor attributes="character.data.attributes" status="character.status" type="'stunDamage'"></cs-sr4-condition-monitor>
+			<cs-sr4-condition-monitor attributes="character.data.attributes" status="character.status" type="'physicalDamage'" editable="editable"></cs-sr4-condition-monitor>
+			<cs-sr4-condition-monitor attributes="character.data.attributes" status="character.status" type="'stunDamage'" editable="editable"></cs-sr4-condition-monitor>
 		</div>
 	</div>
 

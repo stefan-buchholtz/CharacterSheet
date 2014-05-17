@@ -1,13 +1,14 @@
 {
-	"name": "CharacterSheet",
-	"description": "Online character sheet for Shadowrun 4 (and eventually other tabletop RPGs)",
-	"version": "0.0.0",
-	"homepage": "https://github.com/stefan-buchholtz/CharacterSheet",
-	"license": "MIT",
-	"private": true,
-	"dependencies": {
-		"angular": "1.2.x",
-	    "angular-route": "~1.2.x",
-	    "angular-resource": "~1.2.x"
-	}
+  "name": "CharacterSheet",
+  "description": "Online character sheet for Shadowrun 4 (and eventually other tabletop RPGs)",
+  "version": "0.0.0",
+  "homepage": "https://github.com/stefan-buchholtz/CharacterSheet",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "~1.2.x",
+    "angular-resource": "~1.2.x",
+    "angular-bootstrap": "~0.11.0"
+  }
 }

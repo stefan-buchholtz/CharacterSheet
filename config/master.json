@@ -1,5 +1,8 @@
 {
 	"database": {
 		"database": "character_sheet"
+	},
+	"authentication": {
+		"secret": "RCN*7BMRydiyFyzH)3yM"
 	}
 }

@@ -1,0 +1,17 @@
+<form name="login" id="login-form" novalidate>
+	<div class="modal-header">
+	    <h3 class="modal-title">Anmeldung</h3>
+	</div>
+	<div class="modal-body">
+		<label for="email">E-Mail</label>
+		<input type="email" name="login-email" id="login-email" required autofocus ng-model="login.email">
+		<label for="password">Passwort</label>
+		<input type="password" name="login-password" id="login-password" required  ng-model="login.password">
+		<label for="stayLoggedIn"><input type="checkbox" name="stayLoggedIn" ng-model="login.rememberMe" >Angemeldet bleiben</label>
+		<div ng-if="statusText" class="login-error">{{statusText}}</div>
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-disabled="login.$invalid" ng-click="submit(login)">OK</button>
+	    <button class="btn btn-warning" ng-click="cancel()">Abbrechen</button>
+	</div>
+</form>

@@ -1,7 +1,7 @@
 (function(angular) {
 	'use strict';
 	
-	var sr4CharacterSheet = angular.module('sr4CharacterSheet', ['characterSheetServices']);
+	var sr4CharacterSheet = angular.module('sr4CharacterSheet', ['characterSheetServices', 'navigation']);
 	
 	function sortSkills(skills, attributes) {
 		skills = skills.map(function(skill) {
@@ -72,10 +72,12 @@
 		}
 	}
 
-	sr4CharacterSheet.controller('Sr4CharacterSheetCtrl', ['$scope', '$routeParams', 'Character',
-		function($scope, $routeParams, Character) {
+	sr4CharacterSheet.controller('Sr4CharacterSheetCtrl', ['$scope', '$routeParams', 'Character', 'PublicCharacter', 
+		function($scope, $routeParams, Character, PublicCharacter) {
+			$scope.editable = $routeParams.status === 'private';
+			var characterService = $routeParams.status === 'private' ? Character : PublicCharacter;
 			var characterId = $routeParams.characterId;
-			$scope.character = Character.get({characterId: characterId}, function(character) {
+			$scope.character = characterService.get({characterId: characterId}, function(character) {
 				var characterData = character.data;
 				
 				var skills = sortSkills(characterData.skills, characterData.attributes);
@@ -87,13 +89,15 @@
 				if ( $scope.meleeWeaponCount ) {
 					$scope.meleeWeaponDisplay = ($scope.rangedWeaponCount + $scope.meleeWeaponCount <= $scope.armorCount) ? 'left' : 'right';
 				}
-				
-				$scope.$watch('character.status', function(status, oldStatus) {
-					if ( status === oldStatus ) {
-						return;
-					}
-					Character.save({characterId: characterId}, { status: $scope.character.status });
-				}, true);
+				                               
+				if ( $scope.editable ) {
+					$scope.$watch('character.status', function(status, oldStatus) {
+						if ( status === oldStatus ) {
+							return;
+						}
+						characterService.save({characterId: characterId}, { status: $scope.character.status });
+					}, true);
+				}
 			});
 		}
 	]);
@@ -125,20 +129,23 @@
 			scope: {
 				attributes: '=',
 				type: '=',
-				status: '='
+				status: '=',  
+				editable: '='
 			},
 			link: function(scope) {
-				scope.cellClick = function(event) {
-					var damage = Number(event.target.getAttribute('damage'));
-					if ( damage > scope.maxDamage ) {
-						return;
-					}
-					if (damage > scope.status[scope.type]) {
-						scope.status[scope.type] = damage;
-					} else {
-						scope.status[scope.type] = damage - 1;
-					}
-				};
+				if ( scope.editable ) {
+					scope.cellClick = function(event) {
+						var damage = Number(event.target.getAttribute('damage'));
+						if ( damage > scope.maxDamage ) {
+							return;
+						}
+						if (damage > scope.status[scope.type]) {
+							scope.status[scope.type] = damage;
+						} else {
+							scope.status[scope.type] = damage - 1;
+						}
+					};
+				}
 				var expression = scope.type === 'physicalDamage' ? 'attributes.constitution' : 'attributes.willpower';
 				scope.$watch(expression, function(attributeValue) {
 					scope.maxDamage = 8 + Math.floor(attributeValue / 2);

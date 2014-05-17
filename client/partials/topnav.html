@@ -1,0 +1,9 @@
+<div class="remove-bottom">
+	<ul class="topnav">
+		<li class="four columns" ng-show="loginStatus.isLoggedIn"><a href="#/list/private">Meine Charaktere</a></li>
+		<li class="four columns"><a href="#/list/public">Öffentliche Charaktere</a></li>
+		<li class="three columns" ng-class="{'offset-by-three': loginStatus.isLoggedIn}" ng-show="loginStatus.isLoggedIn"><a href="#/profile">Benutzerprofil</a></li>
+		<li class="two columns" ng-hide="loginStatus.isLoggedIn" ng-class="{'offset-by-ten': !loginStatus.isLoggedIn}"><a ng-click="login()">Anmelden</a></li>
+		<li class="two columns" ng-show="loginStatus.isLoggedIn"><a ng-click="logout()">Abmelden</a></li>
+	</ul>
+</div>

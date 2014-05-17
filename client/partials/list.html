@@ -1,4 +1,5 @@
 <div class="container" ng-controller="CharacterListCtrl">
+	<cs-topnav></cs-topnav>
 	<div class="sixteen columns remove-bottom">
 		<h1 style="margin-top: 40px; text-align: right">Charaktere</h1>
 	</div>
@@ -10,14 +11,14 @@
 					<tr>
 						<th>Name</th>
 						<th>System</th>
-						<th>öffentlich</th>
+						<th ng-if="!isPublic">öffentlich</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="character in characters">
-						<td><a href="#/character/{{character.id}}">{{character.name}}</a></td>
+						<td><a href="#/character/{{status}}/{{character.id}}">{{character.name}}</a></td>
 						<td>{{character.rule_system}}</td>
-						<td class="value"><input type="checkbox" ng-model="character.is_public" ng-change="onIsPublicChange(character)"></td>
+						<td ng-if="!isPublic" class="value"><input type="checkbox" ng-model="character.is_public" ng-change="onIsPublicChange(character)"></td>
 					</tr>
 				</tbody>
 			</table>

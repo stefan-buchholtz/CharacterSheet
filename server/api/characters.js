@@ -3,16 +3,20 @@
 var router = require('express').Router(),
 	characterService = require('../services/characterService.js');
 
-var userId = 1;
-
-router.get('/characters', function(req, res) {
-	characterService.list(userId, function(err, characters) {
-		if ( err ) {
-			return res.json(500, err);
+function getCharacter(req, res, next) {
+	var userId = req.user ? req.user.userId : null;
+	characterService.getData(req.params.characterId, userId, function(err, character) {
+		if (err) {
+			return next(err);
 		}
-		res.json(200, characters);
+		if (!character) {
+			err = new Error('character not found');
+			err.status = 404;
+			return next(err);
+		}
+		res.json(200, character);	
 	});
-});
+}
 
 var makeUpdateDeleteCallback = function(res, next) {
 	return function(err, result) {
@@ -28,20 +32,28 @@ var makeUpdateDeleteCallback = function(res, next) {
 	};
 };
 
-router.route('/characters/:characterId')
-	.get(function(req, res, next) {
-		characterService.getData(req.params.characterId, userId, function(err, character) {
-			if (err) {
-				return next(err);
-			}
-			if (!character) {
-				err = new Error('character not found');
-				err.status = 404;
-				return next(err);
-			}
-			res.json(200, character);	
-		});
-	})
+router.get('/public/characters', function(req, res) {
+	characterService.listPublic(function(err, characters) {
+		if ( err ) {
+			return res.json(500, err);
+		}
+		res.json(200, characters);
+	});	
+});
+
+router.get('/public/characters/:characterId', getCharacter);
+
+router.get('/private/characters', function(req, res) {
+	characterService.list(req.user.userId, function(err, characters) {
+		if ( err ) {
+			return res.json(500, err);
+		}
+		res.json(200, characters);
+	});
+});
+
+router.route('/private/characters/:characterId')
+	.get(getCharacter)
 	.post(function(req, res, next) {
 		var err;
 		if ( !req.body ) {
@@ -49,9 +61,9 @@ router.route('/characters/:characterId')
 			err.status = 400;
 			return next(err);
 		}
-		console.log('POST /characters/' + req.params.characterId, 'body: ', req.body);
+		console.log('POST /private/characters/' + req.params.characterId, 'body: ', req.body);
 		if ( typeof req.body.is_public === 'boolean' ) {
-			characterService.updateIsPublic(req.params.characterId, userId, req.body.is_public, makeUpdateDeleteCallback(res, next));
+			characterService.updateIsPublic(req.params.characterId, req.user.userId, req.body.is_public, makeUpdateDeleteCallback(res, next));
 		} else {
 			var data = req.body.data,
 				status = req.body.status || null;
@@ -62,14 +74,14 @@ router.route('/characters/:characterId')
 			}
 
 			if ( data ) {
-				characterService.updateData(req.params.characterId, userId, data, status, makeUpdateDeleteCallback(res, next));
+				characterService.updateData(req.params.characterId, req.user.userId, data, status, makeUpdateDeleteCallback(res, next));
 			} else {
-				characterService.updateStatus(req.params.characterId, userId, status, makeUpdateDeleteCallback(res, next));
+				characterService.updateStatus(req.params.characterId, req.user.userId, status, makeUpdateDeleteCallback(res, next));
 			}
 		}
 	})
 	.delete(function(req, res, next) {
-		characterService.delete(req.params.characterId, userId, makeUpdateDeleteCallback(res, next));
+		characterService.delete(req.params.characterId, req.user.userId, makeUpdateDeleteCallback(res, next));
 	});
 
 module.exports = router;
